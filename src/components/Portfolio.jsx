@@ -539,7 +539,7 @@ export default function Portfolio() {
                       : 'bg-gradient-to-br from-gray-100 to-purple-100'
                   }`}>
                     <img 
-                      src="../public/110788311.jpeg" 
+                      src="/110788311.jpeg" 
                       alt={t.aboutImageAlt}
                       className="w-full h-full object-cover"
                       onError={(e) => {
