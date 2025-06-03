@@ -684,8 +684,8 @@ export default function Portfolio() {
                 tech: ["JavaScript", "React", "Tailwind", "Vercel", "Git", "Figma"],
                 color: "from-purple-600 to-white",
                 status: "completed",
-                github: null,
-                demo: null
+                github: "https://github.com/Gerfy1/Gerfy-Portfolio",
+                demo: "https://gerfy-portfolio.vercel.app"
               }
             ].map((project) => (
               <motion.div
