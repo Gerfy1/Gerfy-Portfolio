@@ -11,7 +11,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Detectar seção ativa
       const sections = ['home', 'about', 'projects', 'skills', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
@@ -30,6 +29,8 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -131,7 +132,7 @@ export default function Navbar() {
               {theme === 'dark' ? '☀️' : '🌙'}
             </motion.button>
 
-            {/* Language Toggle */}
+            {/* Language Toggle > fix*/}
             <motion.button
               onClick={toggleLanguage}
               className={`p-2 rounded-lg transition-all duration-300 ${
@@ -143,15 +144,15 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               title={language === 'pt' ? 'Switch to English' : 'Mudar para Português'}
             >
-              <span className="text-lg">
-                {language === 'pt' ? '🇬🇧' : '🇧🇷'}
+              <span className="text-base" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                {language === 'pt' ? '\uD83C\uDDFA\uD83C\uDDF8' : '\uD83C\uDDE7\uD83C\uDDF7'}
               </span>
               <span className={`text-xs font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
                 {language === 'pt' ? 'EN' : 'PT'}
               </span>
             </motion.button>
             
-            {/* Botão de Contato com neon roxo */}
+            {/* Botão de Contato com neon roxo > curriculo */}
             <motion.button
               onClick={() => scrollToSection('contact')}
               className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 border border-purple-500/30 hover:border-purple-400/50"
@@ -169,7 +170,7 @@ export default function Navbar() {
             </motion.button>
           </div>
 
-          {/* Menu Mobile */}
+          {/* Menu Mobile  - em desenvolvimento*/}
           <div className="md:hidden">
             <motion.button
               className="text-purple-200 p-2 hover:text-white transition-colors"
