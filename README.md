@@ -37,7 +37,7 @@ src/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/Gerfy1/meu-port.git
+git clone https://github.com/Gerfy1/Gerfy-Portfolio.git
 
 # Instale as dependências
 npm install
