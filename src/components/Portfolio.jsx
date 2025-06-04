@@ -281,39 +281,6 @@ export default function Portfolio() {
             </h1>
 
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              {typedCharacters.map((particle) => (
-                <motion.div
-                  key={particle.id}
-                  className={`absolute rounded-full ${
-                    theme === 'dark' ? 'bg-white/90' : 'bg-purple-600/90'
-                  }`}
-                  style={{
-                    left: particle.x,
-                    top: particle.y,
-                    width: `${particle.size}px`,
-                    height: `${particle.size}px`,
-                    boxShadow: theme === 'dark' 
-                      ? '0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.3)'
-                      : '0 0 8px rgba(168, 85, 247, 0.9), 0 0 16px rgba(168, 85, 247, 0.6), 0 0 24px rgba(168, 85, 247, 0.3)'
-                  }}
-                  initial={{
-                    scale: 0,
-                    opacity: 1,
-                    x: 0,
-                    y: 0
-                  }}
-                  animate={{
-                    scale: [0, 1.5, 1, 0],
-                    opacity: [1, 0.8, 0.4, 0],
-                    x: particle.vx * 25,
-                    y: particle.vy * 35
-                  }}
-                  transition={{
-                    duration: 1.8,
-                    ease: "easeOut"
-                  }}
-                />
-              ))}
             {isTyping && (
               <motion.div
                 className="absolute inset-0 pointer-events-none rounded-lg"
