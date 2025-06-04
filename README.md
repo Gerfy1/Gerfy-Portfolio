@@ -82,7 +82,7 @@ O design é totalmente responsivo, adaptando-se perfeitamente a:
 
 - 🌐 **Demo**: 
 - 💼 **LinkedIn**: [Geraldo Alves](https://linkedin.com/in/geraldoaafilho)
-- 📧 **Email**: geraldo.alves@gerfy.tech
+- 📧 **Email**: geraldoalves@gerfy.tech
 
 ---
 

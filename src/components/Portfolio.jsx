@@ -931,7 +931,7 @@ export default function Portfolio() {
                 textShadow: '0 0 8px rgba(168, 85, 247, 0.6)'
               }}
             >
-              geraldo.alves@gerfy.tech
+              geraldoalves@gerfy.tech
             </motion.a>
             <span className={`hidden sm:block ${
               theme === 'dark' ? 'text-gray-600' : 'text-gray-400'
