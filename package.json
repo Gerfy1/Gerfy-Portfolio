@@ -1,5 +1,8 @@
 {
     "name": "react-js",
+    "description": "Portfólio pessoal moderno desenvolvido com React + Vite",
+    "author": "Geraldo Alves <geraldoalves@gerfy.tech>",
+    "license": "MIT",
     "private": true,
     "version": "0.0.0",
     "type": "module",

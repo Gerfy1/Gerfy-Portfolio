@@ -78,6 +78,10 @@ O design é totalmente responsivo, adaptando-se perfeitamente a:
 - 🚀 **Build Otimizado**: Chunks separados e lazy loading
 - 📦 **Bundle Size**: Otimizado para carregamento rápido
 
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
 ## 🔗 Links
 
 - 🌐 **Demo**: 

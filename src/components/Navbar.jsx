@@ -73,7 +73,7 @@ export default function Navbar() {
                 ? 'text-white group-hover:text-gray-100' 
                 : 'text-gray-900 group-hover:text-gray-700'
             } transition-colors duration-300 select-none transform -rotate-3 group-hover:rotate-0 transition-transform duration-300`}              style={{
-                fontFamily: '"Caveat Brush", "Kalam", cursive',
+                fontFamily: '"Edu VIC WA NT Hand Pre", "Caveat Brush", "Kalam", cursive',
                 fontWeight: 600,
                 textShadow: theme === 'dark' ? 
                 '0 3px 6px rgba(0,0,0,0.4), 0 1px 3px rgba(168, 85, 247, 0.3)' :
@@ -84,7 +84,7 @@ export default function Navbar() {
                 textShadow: '0 0 15px rgba(168, 85, 247, 0.8), 0 0 25px rgba(168, 85, 247, 0.5), 0 3px 6px rgba(0,0,0,0.4)'
               }}
             > 
-              G
+              gerfy
             </motion.span>
           </motion.div>
 
