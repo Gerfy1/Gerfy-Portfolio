@@ -60,7 +60,6 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo G japonês com fonte brush */}
           <motion.div
             className="cursor-pointer group"
             whileHover={{ scale: 1.1 }}
@@ -68,7 +67,7 @@ export default function Navbar() {
             onClick={() => scrollToSection('home')}
           >
             <motion.span 
-            className={`text-5xl font-bold ${
+            className={`text-3xl md:text-4xl  font-bold ${
               theme === 'dark' 
                 ? 'text-white group-hover:text-gray-100' 
                 : 'text-gray-900 group-hover:text-gray-700'
@@ -88,9 +87,9 @@ export default function Navbar() {
             </motion.span>
           </motion.div>
 
-         {/* Menu Desktop */}
+         {/* menu dskt */}
           <div className="hidden md:flex items-center space-x-6">
-            {/* Navigation Items */}
+            {/* navigation iteeem */}
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
