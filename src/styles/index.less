@@ -2,3 +2,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+  overflow-x: clip !important;
+}
+
+@media (max-width: 640px) {
+  .text-8xl {
+    font-size: 4rem !important;
+  }
+  
+  .text-7xl {
+    font-size: 3.5rem !important;
+  }
+  
+  .text-6xl {
+    font-size: 3rem !important;
+  }
+}
+
+.emoji-safe {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", emoji, sans-serif !important;
+}
