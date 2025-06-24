@@ -87,7 +87,7 @@ export default function Navbar() {
                   textShadow: '0 0 15px rgba(168, 85, 247, 0.8), 0 0 25px rgba(168, 85, 247, 0.5), 0 3px 6px rgba(0,0,0,0.4)'
                 }}
               > 
-                gerfy
+                g
               </motion.span>
             </motion.div>
 
