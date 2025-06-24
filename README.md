@@ -1,10 +1,10 @@
 # 🚀 Portfólio Pessoal - Geraldo Alves
 
-Um portfólio moderno e responsivo desenvolvido com React + Vite, showcasing minha jornada como desenvolvedor Full Stack. O projeto apresenta uma interface elegante com animações fluidas, tema dark/light e suporte multilíngue.
+portfólio moderno e responsivo desenvolvido com React + Vite, showcasing minha jornada como desenvolvedor Full Stack. O projeto apresenta uma interface elegante com animações fluidas, tema dark/light e suporte multilíngue.
 
 ## ✨ Características
 
-- 🎨 **Design Moderno**: Interface clean com gradientes roxos e animações suaves
+- 🎨 **Design Moderno**: Interface cleanN com gradientes roxos e animações suaves
 - 🌙 **Tema Dark/Light**: Alternância dinâmica entre temas
 - 🌍 **Multilíngue**: Suporte completo para Português e Inglês
 - 📱 **Responsivo**: Layout adaptativo para todos os dispositivos
@@ -84,7 +84,7 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ## 🔗 Links
 
-- 🌐 **Demo**: 
+- 🌐 **Demo**: https://gerfy.tech/
 - 💼 **LinkedIn**: [Geraldo Alves](https://linkedin.com/in/geraldoaafilho)
 - 📧 **Email**: geraldoalves@gerfy.tech
 
