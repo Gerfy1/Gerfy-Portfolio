@@ -53,10 +53,11 @@ const techCategories = {
     techs: [
       { name: "Angular", icon: "🅰️", color: "from-red-500 to-red-700" },
       { name: "React", icon: "⚛️", color: "from-cyan-400 to-blue-600" },
+      { name: "React Native", icon: "📱", color: "from-blue-400 to-cyan-500" },
       { name: "Spring", icon: "🍃", color: "from-green-500 to-green-700" },
       { name: "Node.js", icon: "🟢", color: "from-green-600 to-green-800" },
       { name: "Tailwind", icon: "🎨", color: "from-cyan-500 to-teal-600" },
-      { name: "Bootstrap", icon: "📱", color: "from-purple-500 to-purple-700" },
+      { name: "Bootstrap", icon: "🖌", color: "from-purple-500 to-purple-700" },
       { name: "WordPress", icon: "📝", color: "from-blue-600 to-gray-700" },
       { name: "NPM", icon: "📦", color: "from-red-500 to-red-700" },
       { name: "Yarn", icon: "🧶", color: "from-blue-500 to-cyan-600" },
@@ -134,7 +135,8 @@ export default function Portfolio() {
   const { language, theme, t } = useApp();
 
   useEffect(() => {
-    const typed = new Typed("#typed", {
+    let typed = null;
+    typed = new Typed("#typed", {
       strings: t.typedStrings,
       typeSpeed: 60,
       backSpeed: 40,
@@ -186,7 +188,7 @@ export default function Portfolio() {
     }
 
     return () => typed.destroy();
-  }, [language]);
+  }, [language, theme]);
 
   const createCharacterParticle = (position) => {
     const typedElement = document.querySelector('#typed');
@@ -277,13 +279,20 @@ export default function Portfolio() {
                     ? 'bg-gradient-to-r from-purple-200 via-gray-200 to-purple-300'
                     : 'bg-gradient-to-r from-purple-600 via-gray-800 to-black'
                 }`}
+                 style={{
+                   fontFamily: "'Roboto', sans-serif",
+                   fontWeight: 100,
+                   display: 'block',
+                   textAlign: 'center',
+                 }}
               />
             </h1>
 
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {isTyping && (
               <motion.div
-                className="absolute inset-0 pointer-events-none rounded-lg"
+                className="absolute inset-0 pointer-events-none"
+                initial={{ opacity: 0 }}
                 animate={{
                   boxShadow: theme === 'dark' ? [
                     '0 0 20px rgba(255, 255, 255, 0.1)',

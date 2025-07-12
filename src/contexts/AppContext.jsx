@@ -33,12 +33,15 @@ const translations = {
     welcome: 'Bem-vindo ao meu universo digital. Explore meus projetos e descubra como transformo ideias em soluções inovadoras.',
     tagline: 'TRANSFORMANDO IDEIAS EM REALIDADE',
     typedStrings: [
-      `Oi, eu sou o <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold">Geraldo</span>`,
-      `Sou <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold">Desenvolvedor Full Stack</span>`,
-      `Transformo <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold">ideias em código</span>`,
-      `Apaixonado por <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold">tecnologia</span> <span class="text-yellow-400">💻</span>`,
+      `Oi, eu sou o <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Geraldo</span>`,
+
+      `Sou <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Desenvolvedor Full Stack</span>`,
+
+      `Transformo <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">ideias em código</span>`,
+
+      `Apaixonado por <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">tecnologia</span> <span class="text-yellow-400">💻</span>`,
     ],
-    
+
     aboutTitle: 'Sobre',
     aboutTitleHighlight: 'mim',
     aboutText1: 'Sou graduando em Análise e Desenvolvimento de Sistemas pela UNIESP e desenvolvedor full stack apaixonado por criar soluções tecnológicas inovadoras. Com experiência sólida em Java, Spring, Angular e TypeScript, atuo tanto no desenvolvimento backend quanto frontend, sempre focado em entregar produtos de alta qualidade.',
