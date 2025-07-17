@@ -125,7 +125,7 @@ export default function Navbar() {
                 onClick={toggleTheme}
                 className={`p-2 rounded-lg transition-all duration-300 ${
                   theme === 'dark' ? 
-                    'bg-gray-800 hover:bg-gray-700 text-yellow-400' : 
+                    'bg-[#0D0D0D] hover:bg-[#1A1A1A] text-yellow-400' : 
                     'bg-gray-200 hover:bg-gray-300 text-gray-800'
                 }`}
                 whileHover={{ scale: 1.1 }}
@@ -140,7 +140,7 @@ export default function Navbar() {
                 onClick={toggleLanguage}
                 className={`p-2 rounded-lg transition-all duration-300 ${
                   theme === 'dark' ? 
-                    'bg-gray-800 hover:bg-gray-700' : 
+                    'bg-[#0D0D0D] hover:bg-[#1A1A1A]' : 
                     'bg-gray-200 hover:bg-gray-300'
                 } flex items-center space-x-2`}
                 whileHover={{ scale: 1.1 }}
