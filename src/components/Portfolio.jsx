@@ -578,7 +578,7 @@ export default function Portfolio() {
       </section>
 
       <section id="projects" className={`relative ${
-        theme === 'dark' ? 'bg-gray-900 text-purple-100' : 'bg-white text-gray-900'
+        theme === 'dark' ? 'bg-[#0D0D0D] text-purple-100' : 'bg-white text-gray-900'
       } py-20 px-6`}>        
       <motion.div 
           className="max-w-6xl mx-auto relative z-10"
@@ -673,7 +673,7 @@ export default function Portfolio() {
               >
               <Card className={`${
                   theme === 'dark' 
-                    ? 'bg-gray-800/80 border-gray-700 hover:border-purple-500/50 hover:shadow-purple-500/10'
+                    ? 'bg-black-800/80 border-gray-700 hover:border-purple-500/50 hover:shadow-purple-500/10'
                     : 'bg-white border-gray-200 hover:border-purple-400/50 hover:shadow-purple-400/10 shadow-lg'
                 } backdrop-blur-sm transition-all duration-300 overflow-hidden hover:shadow-2xl h-full flex flex-col`}>
                                     <motion.div 
@@ -741,8 +741,8 @@ export default function Portfolio() {
                           variant="outline" 
                           className={`${
                             theme === 'dark' 
-                              ? 'border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-purple-200 hover:border-purple-500/50'
-                              : 'border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-purple-700 hover:border-purple-400/50'
+                              ? 'border-gray-600 text-gray-300 hover:bg-black-700 hover:text-purple-200 hover:border-purple-500/50'
+                              : 'border-gray-300 text-gray-700 hover:bg-black-100 hover:text-purple-700 hover:border-purple-400/50'
                             } flex-1 transition-all duration-300`}                          style={{
                             transition: 'all 0.3s ease'
                           }}
@@ -861,7 +861,7 @@ export default function Portfolio() {
                       <motion.div 
                         className={`${
                           theme === 'dark' 
-                            ? 'bg-gray-900 hover:bg-purple-950 border-gray-700 hover:border-purple-600'
+                            ? 'bg-[#0D0D0D] hover:bg-purple-950 border-gray-700 hover:border-purple-600'
                             : 'bg-white hover:bg-purple-50 border-gray-200 hover:border-purple-400'
                         } border rounded-2xl p-4 text-center transition-all duration-300 shadow-lg hover:shadow-xl h-full flex flex-col items-center justify-center min-h-[120px]`}
                         whileHover={{
@@ -966,7 +966,7 @@ export default function Portfolio() {
             <Button 
               className={`${
                 theme === 'dark' 
-                  ? 'bg-gray-800 hover:bg-gray-700 text-purple-200'
+                  ? 'bg-gray-900 hover:bg-gray-700 text-purple-200'
                   : 'bg-gray-100 hover:bg-gray-200 text-purple-700 border border-gray-300'
               } px-8 py-3 transition-all duration-300`}              style={{
                 boxShadow: '0 0 8px rgba(168, 85, 247, 0.2)',

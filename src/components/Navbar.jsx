@@ -189,8 +189,8 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`p-2 rounded-lg transition-colors ${
                   theme === 'dark' 
-                    ? 'text-purple-200 hover:text-white hover:bg-gray-800' 
-                    : 'text-purple-600 hover:text-purple-800 hover:bg-gray-100'
+                    ? 'text-purple-200 hover:text-white hover:bg-black-800' 
+                    : 'text-purple-600 hover:text-purple-800 hover:bg-black-100'
                 }`}
                 whileTap={{ scale: 0.95 }}
                 whileHover={{
@@ -236,8 +236,8 @@ export default function Navbar() {
             <motion.div
               className={`absolute top-20 right-4 left-4 ${
                 theme === 'dark' 
-                  ? 'bg-gray-900/95 border-gray-700' 
-                  : 'bg-white/95 border-gray-200'
+                  ? 'bg-black-900/95 border-gray-700' 
+                  : 'bg-white/95 border-black-200'
               } backdrop-blur-md rounded-2xl border shadow-2xl overflow-hidden`}
               initial={{ opacity: 0, scale: 0.95, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -276,10 +276,11 @@ export default function Navbar() {
                   <motion.button
                     onClick={toggleTheme}
                     className={`flex-1 p-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 ${
-                      theme === 'dark' ? 
-                        'bg-gray-800 hover:bg-gray-700 text-yellow-400' : 
-                        'bg-gray-200 hover:bg-gray-300 text-gray-800'
-                    }`}
+                      theme === 'dark' ?
+                        'bg-[#0D0D0D] hover:bg-[#1A1A1A] text-yellow-400 border border-purple-800/20' :
+                        'bg-white hover:bg-purple-50 text-gray-800 border border-purple-100'
+                      }`}
+                    whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {theme === 'dark' ? '☀️' : '🌙'}
@@ -290,10 +291,11 @@ export default function Navbar() {
                   <motion.button
                     onClick={toggleLanguage}
                     className={`flex-1 p-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 ${
-                      theme === 'dark' ? 
-                        'bg-gray-800 hover:bg-gray-700' : 
-                        'bg-gray-200 hover:bg-gray-300'
-                    }`}
+                      theme === 'dark' ?
+                        'bg-[#0D0D0D] hover:bg-[#1A1A1A] border border-purple-800/20' :
+                        'bg-white hover:bg-purple-50 border border-purple-100'
+                      } flex items-center space-x-2`}
+                    whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     🌐
