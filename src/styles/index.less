@@ -7,6 +7,29 @@ html, body {
   overflow-x: clip !important;
 }
 
+#typed, .typed-cursor {
+  display: inline !important;
+  vertical-align: middle !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+
+}
+
+.typed-cursor {
+  font-size: 1em !important;
+  margin-left: -0.1em !important;
+  display: inline-block !important;
+
+}
+
+  h1.flex.items-center {
+    width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+
 @media (max-width: 640px) {
   .text-8xl {
     font-size: 4rem !important;
@@ -19,9 +42,21 @@ html, body {
   .text-6xl {
     font-size: 3rem !important;
   }
-  #typed {
+ #typed {
+    display: inline !important;
     text-align: center !important;
+    width: auto !important;
+  }
+  
+  h1.flex.items-center {
     display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  .typed-cursor {
+    display: inline !important;
+    position: static !important;
   }
 }
 
