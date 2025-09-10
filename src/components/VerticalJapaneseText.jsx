@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-// Caracteres japoneses para o efeito de "embaralhamento"
 const randomChars = [
   '創', '造', '性', '革', '新', '技', '術', '継', '続', '的', 'な', '進', '化',
   '未', '来', 'を', '築', 'く', '情', '熱', '成', '長', '挑', '戦', '協', '力',
@@ -10,7 +9,6 @@ const randomChars = [
   '心', '愛', '希', '望', '夢', '光', '力', '強', '速', '智', '慧', '知'
 ];
 
-// Diferentes palavras que podem aparecer
 const finalWords = [
   ['継', '続', '的', 'な', '進', '化'], // Evolução contínua
   ['創', '造', '性'],                   // Criatividade
@@ -31,7 +29,6 @@ export default function VerticalJapaneseText({
   const [isAnimating, setIsAnimating] = useState(false);
   const [animatingCharIndex, setAnimatingCharIndex] = useState(-1);
 
-  // Inicializa com a primeira palavra
   useEffect(() => {
     const firstWord = finalWords[0];
     setDisplayChars([...firstWord]);
@@ -39,10 +36,8 @@ export default function VerticalJapaneseText({
 
   useEffect(() => {
     const startAnimation = () => {
-      // Só inicia nova animação se não estiver animando
       if (isAnimating) return;
 
-      // Seleciona uma palavra aleatória diferente da atual
       let newWordIndex;
       do {
         newWordIndex = Math.floor(Math.random() * finalWords.length);
@@ -52,28 +47,23 @@ export default function VerticalJapaneseText({
       setCurrentWordIndex(newWordIndex);
       setIsAnimating(true);
 
-      // Ajusta o array de display para o tamanho da nova palavra
       const maxLength = Math.max(displayChars.length, targetWord.length);
       let workingChars = [...displayChars];
       
-      // Se a nova palavra for maior, preenche com caracteres aleatórios
       while (workingChars.length < targetWord.length) {
         workingChars.push(randomChars[Math.floor(Math.random() * randomChars.length)]);
       }
       
-      // Se a nova palavra for menor, mantém apenas os necessários
       if (workingChars.length > targetWord.length) {
         workingChars = workingChars.slice(0, targetWord.length);
       }
 
       setDisplayChars(workingChars);
 
-      // Anima cada caractere em sequência - MUITO MAIS RÁPIDO
       let currentCharIndex = 0;
       
       const animateNextChar = () => {
         if (currentCharIndex >= targetWord.length) {
-          // Animação completa
           setDisplayChars([...targetWord]);
           setIsAnimating(false);
           setAnimatingCharIndex(-1);
@@ -82,10 +72,8 @@ export default function VerticalJapaneseText({
 
         setAnimatingCharIndex(currentCharIndex);
         let animationCount = 0;
-        const maxAnimations = 3 + Math.random() * 3; // 3-6 iterações (muito mais rápido)
-
+        const maxAnimations = 3 + Math.random() * 3; 
         const charInterval = setInterval(() => {
-          // Muda para um caractere aleatório
           setDisplayChars(prev => {
             const newChars = [...prev];
             newChars[currentCharIndex] = randomChars[Math.floor(Math.random() * randomChars.length)];
@@ -97,7 +85,6 @@ export default function VerticalJapaneseText({
           if (animationCount >= maxAnimations) {
             clearInterval(charInterval);
             
-            // Para na palavra final
             setDisplayChars(prev => {
               const newChars = [...prev];
               newChars[currentCharIndex] = targetWord[currentCharIndex];
@@ -106,25 +93,22 @@ export default function VerticalJapaneseText({
 
             currentCharIndex++;
             
-            // Delay muito pequeno antes do próximo caractere
-            setTimeout(animateNextChar, 30); // Era 120ms, agora 30ms
+        
+            setTimeout(animateNextChar, 30); 
           }
-        }, 15); // Era 45ms, agora 15ms - SUPER RÁPIDO
+        }, 15); 
       };
 
-      // Inicia a animação do primeiro caractere rapidamente
-      setTimeout(animateNextChar, 50); // Era 300ms, agora 50ms
+      setTimeout(animateNextChar, 50); 
     };
 
-    // Inicia a primeira animação quase imediatamente
-    const initialDelay = setTimeout(startAnimation, 500); // Era 2000-5000ms, agora 500ms
+    const initialDelay = setTimeout(startAnimation, 500); 
 
-    // Repete a animação a cada 2-4 segundos (para testar rapidamente)
     const interval = setInterval(() => {
       if (!isAnimating) {
         startAnimation();
       }
-    }, 2000 + Math.random() * 2000); // Era 8000-15000ms, agora 2000-4000ms
+    }, 2000 + Math.random() * 2000); 
 
     return () => {
       clearTimeout(initialDelay);
@@ -166,8 +150,8 @@ export default function VerticalJapaneseText({
               color: isBlackBackground ? 'rgba(255, 255, 255, 0.25)' : 'rgba(0, 0, 0, 0.25)',
               textShadow: animatingCharIndex === index 
                 ? (isBlackBackground 
-                    ? '0 0 15px rgba(168, 85, 247, 0.7), 0 0 30px rgba(168, 85, 247, 0.4), 0 0 45px rgba(168, 85, 247, 0.2)' 
-                    : '0 0 10px rgba(147, 51, 234, 0.6), 0 0 20px rgba(147, 51, 234, 0.3)')
+                    ? '0 0 15px rgba(30, 64, 175, 0.7), 0 0 30px rgba(30, 64, 175, 0.4), 0 0 45px rgba(30, 64, 175, 0.2)' 
+                    : '0 0 10px rgba(29, 78, 216, 0.6), 0 0 20px rgba(29, 78, 216, 0.3)')
                 : 'none',
               filter: animatingCharIndex === index ? 'brightness(1.5)' : 'brightness(1)'
             }}
