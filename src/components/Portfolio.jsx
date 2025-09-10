@@ -40,11 +40,11 @@ const techCategories = {
     icon: "💻",
     techs: [
       { name: "Java", icon: "☕", color: "from-orange-500 to-red-600" },
-      { name: "Kotlin", icon: "🎯", color: "from-purple-500 to-indigo-600" },
+      { name: "Kotlin", icon: "🎯", color: "from-blue-800 to-indigo-600" },
       { name: "TypeScript", icon: "📘", color: "from-blue-500 to-blue-700" },
       { name: "JavaScript", icon: "⚡", color: "from-yellow-400 to-orange-500" },
       { name: "Python", icon: "🐍", color: "from-green-400 to-blue-600" },
-      { name: "PHP", icon: "🌐", color: "from-purple-600 to-blue-600" }
+      { name: "PHP", icon: "🌐", color: "from-blue-900 to-blue-600" }
     ]
   },
   frameworks: {
@@ -57,7 +57,7 @@ const techCategories = {
       { name: "Spring", icon: "🍃", color: "from-green-500 to-green-700" },
       { name: "Node.js", icon: "🟢", color: "from-green-600 to-green-800" },
       { name: "Tailwind", icon: "🎨", color: "from-cyan-500 to-teal-600" },
-      { name: "Bootstrap", icon: "🖌", color: "from-purple-500 to-purple-700" },
+      { name: "Bootstrap", icon: "🖌", color: "from-blue-800 to-blue-900" },
       { name: "WordPress", icon: "📝", color: "from-blue-600 to-gray-700" },
       { name: "NPM", icon: "📦", color: "from-red-500 to-red-700" },
       { name: "Yarn", icon: "🧶", color: "from-blue-500 to-cyan-600" },
@@ -71,7 +71,7 @@ const techCategories = {
       { name: "PostgreSQL", icon: "🐘", color: "from-blue-600 to-indigo-700" },
       { name: "MySQL", icon: "🐬", color: "from-orange-500 to-yellow-600" },
       { name: "Hibernate", icon: "💾", color: "from-amber-600 to-orange-700" },
-      { name: "phpMyAdmin", icon: "🔧", color: "from-blue-500 to-purple-600" }
+      { name: "phpMyAdmin", icon: "🔧", color: "from-blue-500 to-blue-900" }
     ]
   },
   cloud: {
@@ -89,9 +89,9 @@ const techCategories = {
     techs: [
       { name: "Oracle", icon: "🔴", color: "from-red-600 to-red-800" },
       { name: "Vercel", icon: "▲", color: "from-gray-800 to-black" },
-      { name: "Render", icon: "🚀", color: "from-purple-600 to-pink-600" },
+      { name: "Render", icon: "🚀", color: "from-blue-900 to-pink-600" },
       { name: "Cloudflare", icon: "🌩️", color: "from-orange-500 to-yellow-500" },
-      { name: "Hostinger", icon: "🏠", color: "from-purple-500 to-blue-600" },
+      { name: "Hostinger", icon: "🏠", color: "from-blue-800 to-blue-600" },
       { name: "GitHub Pages", icon: "📄", color: "from-gray-700 to-gray-900" }
     ]
   },
@@ -109,11 +109,11 @@ const techCategories = {
     title: "Ferramentas",
     icon: "🔧",
     techs: [
-      { name: "Figma", icon: "🎭", color: "from-purple-500 to-pink-500" },
+      { name: "Figma", icon: "🎭", color: "from-blue-800 to-pink-500" },
       { name: "Postman", icon: "📮", color: "from-orange-500 to-red-500" },
       { name: "Notion", icon: "📝", color: "from-gray-600 to-gray-800" },
       { name: "Trello", icon: "📋", color: "from-blue-500 to-blue-700" },
-      { name: "Insomnia", icon: "😴", color: "from-purple-600 to-indigo-700" },
+      { name: "Insomnia", icon: "😴", color: "from-blue-900 to-indigo-700" },
       { name: "Twilio", icon: "📞", color: "from-red-500 to-pink-600" },
       { name: "Hugo", icon: "⚡", color: "from-pink-500 to-rose-600" },
       { name: "Swagger UI", icon: "📊", color: "from-green-500 to-blue-600" }
@@ -232,18 +232,18 @@ export default function Portfolio() {
       <SectionAwareJapaneseText side="right" />
       
         <section id="home" className={`relative ${
-        theme === 'dark' ? 'bg-black text-purple-100' : 'bg-white text-gray-900'
+        theme === 'dark' ? 'bg-black text-blue-100' : 'bg-white text-gray-900'
       } min-h-screen flex flex-col items-center justify-center text-center px-4`}>
         
         <div className={`absolute inset-0 pointer-events-none ${
           theme === 'dark' ? 'opacity-20' : 'opacity-10'
         }`} style={{
           backgroundImage: theme === 'dark' ? `
-            radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.1) 0%, transparent 70%),
-            radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.08) 0%, transparent 70%)
+            radial-gradient(circle at 25% 25%, rgba(30, 64, 175, 0.1) 0%, transparent 70%),
+            radial-gradient(circle at 75% 75%, rgba(30, 58, 138, 0.08) 0%, transparent 70%)
           ` : `
-            radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.05) 0%, transparent 70%),
-            radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.03) 0%, transparent 70%)
+            radial-gradient(circle at 25% 25%, rgba(30, 64, 175, 0.05) 0%, transparent 70%),
+            radial-gradient(circle at 75% 75%, rgba(30, 58, 138, 0.03) 0%, transparent 70%)
           `,
           backgroundSize: '400px 400px, 600px 600px'
         }}></div>
@@ -252,13 +252,13 @@ export default function Portfolio() {
           className="absolute inset-0 pointer-events-none"
           animate={{
             background: theme === 'dark' ? [
-              "radial-gradient(circle at 30% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 60%)",
-              "radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.18) 0%, transparent 60%)",
-              "radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.12) 0%, transparent 60%)"
+              "radial-gradient(circle at 30% 70%, rgba(30, 64, 175, 0.15) 0%, transparent 60%)",
+              "radial-gradient(circle at 70% 30%, rgba(30, 58, 138, 0.18) 0%, transparent 60%)",
+              "radial-gradient(circle at 50% 50%, rgba(23, 37, 84, 0.12) 0%, transparent 60%)"
             ] : [
-              "radial-gradient(circle at 30% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 60%)",
-              "radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.10) 0%, transparent 60%)",
-              "radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.06) 0%, transparent 60%)"
+              "radial-gradient(circle at 30% 70%, rgba(30, 64, 175, 0.08) 0%, transparent 60%)",
+              "radial-gradient(circle at 70% 30%, rgba(30, 58, 138, 0.10) 0%, transparent 60%)",
+              "radial-gradient(circle at 50% 50%, rgba(23, 37, 84, 0.06) 0%, transparent 60%)"
             ]
           }}
           transition={{ duration: 15, repeat: Infinity }}
@@ -276,8 +276,8 @@ export default function Portfolio() {
                 id="typed" 
                 className={`text-transparent bg-clip-text ${
                   theme === 'dark' 
-                    ? 'bg-gradient-to-r from-purple-200 via-gray-200 to-purple-300'
-                    : 'bg-gradient-to-r from-purple-600 via-gray-800 to-black'
+                    ? 'bg-gradient-to-r from-blue-200 via-gray-200 to-blue-300'
+                    : 'bg-gradient-to-r from-blue-900 via-gray-800 to-black'
                 }`}
                  style={{
                    fontFamily: "'Roboto', sans-serif",
@@ -301,11 +301,11 @@ export default function Portfolio() {
                     '0 0 40px rgba(255, 255, 255, 0.6)',
                     '0 0 20px rgba(255, 255, 255, 0.1)'
                   ] : [
-                    '0 0 20px rgba(168, 85, 247, 0.1)',
-                    '0 0 40px rgba(168, 85, 247, 0.6)',
-                    '0 0 60px rgba(168, 85, 247, 0.8)',
-                    '0 0 40px rgba(168, 85, 247, 0.6)',
-                    '0 0 20px rgba(168, 85, 247, 0.1)'
+                    '0 0 20px rgba(30, 64, 175, 0.1)',
+                    '0 0 40px rgba(30, 64, 175, 0.6)',
+                    '0 0 60px rgba(30, 64, 175, 0.8)',
+                    '0 0 40px rgba(30, 64, 175, 0.6)',
+                    '0 0 20px rgba(30, 64, 175, 0.1)'
                   ]
                 }}
                 transition={{
@@ -339,8 +339,8 @@ export default function Portfolio() {
             <motion.h2 
               className={`text-2xl md:text-3xl font-bold text-transparent bg-clip-text ${
                 theme === 'dark' 
-                  ? 'bg-gradient-to-r from-purple-400 via-purple-200 to-gray-300'
-                  : 'bg-gradient-to-r from-purple-600 via-purple-800 to-gray-700'
+                  ? 'bg-gradient-to-r from-blue-400 via-blue-200 to-gray-300'
+                  : 'bg-gradient-to-r from-blue-900 via-blue-800 to-gray-700'
               } tracking-wider`}
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
@@ -353,8 +353,8 @@ export default function Portfolio() {
               style={{
                 backgroundSize: '200% 200%',
                 textShadow: theme === 'dark' 
-                  ? '0 0 20px rgba(168, 85, 247, 0.3)'
-                  : '0 0 15px rgba(168, 85, 247, 0.4)'
+                  ? '0 0 20px rgba(30, 64, 175, 0.3)'
+                  : '0 0 15px rgba(30, 64, 175, 0.4)'
               }}
             >
               {t.tagline}
@@ -368,18 +368,18 @@ export default function Portfolio() {
             transition={{ delay: 1.8, duration: 0.6 }}
           >
             <div className={`w-6 h-10 border-2 ${
-              theme === 'dark' ? 'border-purple-500' : 'border-purple-600'
+              theme === 'dark' ? 'border-blue-800' : 'border-blue-900'
             } rounded-full mx-auto flex justify-center`}>
               <motion.div 
                 className={`w-1 h-3 ${
-                  theme === 'dark' ? 'bg-purple-400' : 'bg-purple-600'
+                  theme === 'dark' ? 'bg-blue-400' : 'bg-blue-900'
                 } rounded-full mt-2`}
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
                 style={{
                   boxShadow: theme === 'dark' 
-                    ? '0 0 8px rgba(168, 85, 247, 0.6), 0 0 16px rgba(168, 85, 247, 0.4)'
-                    : '0 0 8px rgba(168, 85, 247, 0.8), 0 0 16px rgba(168, 85, 247, 0.6)'
+                    ? '0 0 8px rgba(30, 64, 175, 0.6), 0 0 16px rgba(30, 64, 175, 0.4)'
+                    : '0 0 8px rgba(30, 64, 175, 0.8), 0 0 16px rgba(30, 64, 175, 0.6)'
                 }}
               />
             </div>
@@ -388,7 +388,7 @@ export default function Portfolio() {
       </section>
 
       <section id="about" className={`relative ${
-        theme === 'dark' ? 'bg-purple-950 text-purple-100' : 'bg-gray-50 text-gray-900'
+        theme === 'dark' ? 'bg-blue-950 text-blue-100' : 'bg-gray-50 text-gray-900'
       } py-20 px-6`}>
         <motion.div 
           className="max-w-4xl mx-auto relative z-10"
@@ -403,8 +403,8 @@ export default function Portfolio() {
           >
              {t.aboutTitle} <span className={`text-transparent bg-clip-text ${
               theme === 'dark' 
-                ? 'bg-gradient-to-r from-purple-400 to-gray-300'
-                : 'bg-gradient-to-r from-purple-600 to-gray-700'
+                ? 'bg-gradient-to-r from-blue-400 to-gray-300'
+                : 'bg-gradient-to-r from-blue-900 to-gray-700'
             }`}>{t.aboutTitleHighlight}</span>
           </motion.h2>
           
@@ -415,7 +415,7 @@ export default function Portfolio() {
            <div className="space-y-6">
               <motion.p 
                 className={`text-lg ${
-                  theme === 'dark' ? 'text-purple-200' : 'text-gray-700'
+                  theme === 'dark' ? 'text-blue-200' : 'text-gray-700'
                 } leading-relaxed`}
                 variants={fadeInUp}
               >
@@ -423,7 +423,7 @@ export default function Portfolio() {
               </motion.p>
               <motion.p 
                 className={`text-lg ${
-                  theme === 'dark' ? 'text-purple-200' : 'text-gray-700'
+                  theme === 'dark' ? 'text-blue-200' : 'text-gray-700'
                 } leading-relaxed`}
                 variants={fadeInUp}
               >
@@ -435,16 +435,16 @@ export default function Portfolio() {
                     key={trait} 
                     className={`px-4 py-2 ${
                       theme === 'dark' 
-                        ? 'bg-purple-800/50 border-purple-600/50 text-purple-200 hover:shadow-purple-500/50'
-                        : 'bg-purple-100 border-purple-300/50 text-purple-800 hover:shadow-purple-400/30'
+                        ? 'bg-blue-800/50 border-blue-600/50 text-blue-200 hover:shadow-blue-500/50'
+                        : 'bg-blue-100 border-blue-300/50 text-blue-800 hover:shadow-blue-400/30'
                     } border rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg`}
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     whileHover={{ 
                       scale: 1.05,
                       boxShadow: theme === 'dark' 
-                        ? '0 4px 20px rgba(168, 85, 247, 0.3), 0 0 8px rgba(168, 85, 247, 0.2)'
-                        : '0 4px 20px rgba(168, 85, 247, 0.2), 0 0 8px rgba(168, 85, 247, 0.1)'
+                        ? '0 4px 20px rgba(30, 64, 175, 0.3), 0 0 8px rgba(30, 64, 175, 0.2)'
+                        : '0 4px 20px rgba(30, 64, 175, 0.2), 0 0 8px rgba(30, 64, 175, 0.1)'
                     }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
@@ -483,14 +483,14 @@ export default function Portfolio() {
                       )` : `conic-gradient(
                         from 0deg,
                         transparent 0deg,
-                        rgba(168, 85, 247, 0.4) 10deg,
-                        rgba(168, 85, 247, 0.8) 20deg,
-                        rgba(168, 85, 247, 0.4) 30deg,
+                        rgba(30, 64, 175, 0.4) 10deg,
+                        rgba(30, 64, 175, 0.8) 20deg,
+                        rgba(30, 64, 175, 0.4) 30deg,
                         transparent 40deg,
                         transparent 320deg,
-                        rgba(168, 85, 247, 0.4) 330deg,
-                        rgba(168, 85, 247, 0.8) 340deg,
-                        rgba(168, 85, 247, 0.4) 350deg,
+                        rgba(30, 64, 175, 0.4) 330deg,
+                        rgba(30, 64, 175, 0.8) 340deg,
+                        rgba(30, 64, 175, 0.4) 350deg,
                         transparent 360deg
                       )`,
                       padding: '3px'
@@ -505,14 +505,14 @@ export default function Portfolio() {
                     }}
                   >
                     <div className={`w-full h-full rounded-2xl ${
-                      theme === 'dark' ? 'bg-purple-950' : 'bg-white'
+                      theme === 'dark' ? 'bg-blue-950' : 'bg-white'
                     }`}></div>                 
                      </motion.div>
 
                    <div className={`absolute inset-1 rounded-2xl overflow-hidden ${
                     theme === 'dark' 
-                      ? 'bg-gradient-to-br from-gray-800 to-purple-900'
-                      : 'bg-gradient-to-br from-gray-100 to-purple-100'
+                      ? 'bg-gradient-to-br from-gray-800 to-blue-900'
+                      : 'bg-gradient-to-br from-gray-100 to-blue-100'
                   }`}>
                     <img 
                       src="/110788311.jpeg" 
@@ -526,7 +526,7 @@ export default function Portfolio() {
                     
                     <div 
                       className={`w-full h-full flex items-center justify-center ${
-                        theme === 'dark' ? 'text-purple-100' : 'text-purple-900'
+                        theme === 'dark' ? 'text-blue-100' : 'text-blue-900'
                       } text-6xl font-bold`}
                       style={{
                         display: 'none',
@@ -542,7 +542,7 @@ export default function Portfolio() {
                     style={{
                       background: `radial-gradient(
                         circle at center,
-                        rgba(168, 85, 247, 0.1) 0%,
+                        rgba(30, 64, 175, 0.1) 0%,
                         transparent 70%
                       )`
                     }}
@@ -553,7 +553,7 @@ export default function Portfolio() {
                     style={{
                       background: `radial-gradient(
                         circle at center,
-                        rgba(168, 85, 247, ${theme === 'dark' ? '0.1' : '0.05'}) 0%,
+                        rgba(30, 64, 175, ${theme === 'dark' ? '0.1' : '0.05'}) 0%,
                         transparent 70%
                       )`
                     }}
@@ -565,9 +565,9 @@ export default function Portfolio() {
                   style={{
                     background: `linear-gradient(
                       45deg,
-                      rgba(168, 85, 247, ${theme === 'dark' ? '0.3' : '0.2'}),
-                      rgba(139, 92, 246, ${theme === 'dark' ? '0.3' : '0.2'}),
-                      rgba(124, 58, 237, ${theme === 'dark' ? '0.3' : '0.2'})
+                      rgba(30, 64, 175, ${theme === 'dark' ? '0.3' : '0.2'}),
+                      rgba(37, 99, 235, ${theme === 'dark' ? '0.3' : '0.2'}),
+                      rgba(59, 130, 246, ${theme === 'dark' ? '0.3' : '0.2'})
                     )`
                   }}
                 />
@@ -578,7 +578,7 @@ export default function Portfolio() {
       </section>
 
       <section id="projects" className={`relative ${
-        theme === 'dark' ? 'bg-[#0D0D0D] text-purple-100' : 'bg-white text-gray-900'
+        theme === 'dark' ? 'bg-[#0D0D0D] text-blue-100' : 'bg-white text-gray-900'
       } py-20 px-6`}>        
       <motion.div 
           className="max-w-6xl mx-auto relative z-10"
@@ -593,8 +593,8 @@ export default function Portfolio() {
           >
             {t.projectsTitle} <span className={`text-transparent bg-clip-text ${
               theme === 'dark' 
-                ? 'bg-gradient-to-r from-purple-400 to-gray-300'
-                : 'bg-gradient-to-r from-purple-600 to-gray-700'
+                ? 'bg-gradient-to-r from-blue-400 to-gray-300'
+                : 'bg-gradient-to-r from-blue-900 to-gray-700'
             }`}>{t.projectsTitleHighlight}</span>
           </motion.h2>
           
@@ -608,7 +608,7 @@ export default function Portfolio() {
                 title: t.projects.forumhub.title,
                 description: t.projects.forumhub.description,
                 tech: ["Java", "Spring", "PostgreSQL","Swagger UI", "Git"],
-                color: "from-purple-600 to-white",
+                color: "from-blue-600 to-white",
                 status: "completed",
                 github: "https://github.com/Gerfy1/ForumHub",
                 demo: null
@@ -618,7 +618,7 @@ export default function Portfolio() {
                 title: t.projects.medapi.title,
                 description: t.projects.medapi.description,
                 tech: ["Java", "Spring", "MySQL", "Swagger UI", "Git", "Trello", "Figma"],
-                color: "from-purple-600 to-white",
+                color: "from-blue-600 to-white",
                 status: "completed",
                 github: "https://github.com/Gerfy1/MedAPI",
                 demo: null
@@ -628,7 +628,7 @@ export default function Portfolio() {
                 title: t.projects.fipeapp.title,
                 description: t.projects.fipeapp.description,
                 tech: ["Java", "Insomnia", "Swagger UI", "Git", "Notion"],
-                color: "from-purple-700 to-white",
+                color: "from-blue-700 to-white",
                 status: "completed",
                 github: "https://github.com/Gerfy1/FipeAPP",
                 demo: null
@@ -638,7 +638,7 @@ export default function Portfolio() {
                 title: t.projects.jobsMemory.title,
                 description: t.projects.jobsMemory.description,
                 tech: ["Java","Spring","TypeScript", "Angular", "MySQL","Git", "Docker", "Figma", "Vercel", "Render"],
-                color: "from-purple-700 to-white",
+                color: "from-blue-700 to-white",
                 status: "inDevelopment",
                 github: "https://github.com/geraldo/jobs-memory",
                 demo: "https://login-angular-memory.vercel.app/login"
@@ -648,7 +648,7 @@ export default function Portfolio() {
                 title: t.projects.managementSystem.title,
                 description: t.projects.managementSystem.description,
                 tech: ["Java", "Spring", "PostgreSQL", "Oracle Cloud", "Git", "React"],
-                color: "from-purple-600 to-white",
+                color: "from-blue-600 to-white",
                 status: "planning",
                 github: null,
                 demo: null
@@ -658,7 +658,7 @@ export default function Portfolio() {
                 title: t.projects.port.title,
                 description: t.projects.port.description,
                 tech: ["JavaScript", "React", "Tailwind", "Vercel", "Git", "Figma"],
-                color: "from-purple-600 to-white",
+                color: "from-blue-600 to-white",
                 status: "completed",
                 github: "https://github.com/Gerfy1/Gerfy-Portfolio",
                 demo: "https://gerfy-portfolio.vercel.app"
@@ -673,8 +673,8 @@ export default function Portfolio() {
               >
               <Card className={`${
                   theme === 'dark' 
-                    ? 'bg-black-800/80 border-gray-700 hover:border-purple-500/50 hover:shadow-purple-500/10'
-                    : 'bg-white border-gray-200 hover:border-purple-400/50 hover:shadow-purple-400/10 shadow-lg'
+                    ? 'bg-black-800/80 border-gray-700 hover:border-blue-500/50 hover:shadow-blue-500/10'
+                    : 'bg-white border-gray-200 hover:border-blue-400/50 hover:shadow-blue-400/10 shadow-lg'
                 } backdrop-blur-sm transition-all duration-300 overflow-hidden hover:shadow-2xl h-full flex flex-col`}>
                                     <motion.div 
                     className={`h-2 bg-gradient-to-r ${project.color}`}
@@ -683,15 +683,15 @@ export default function Portfolio() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
                     style={{
-                      filter: 'drop-shadow(0 0 4px rgba(168, 85, 247, 0.5))'
+                      filter: 'drop-shadow(0 0 4px rgba(30, 64, 175, 0.5))'
                     }}
                   />
                     <CardContent className="p-6 flex-1 flex flex-col">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className={`text-xl font-semibold ${
                         theme === 'dark' 
-                          ? 'text-purple-100 group-hover:text-purple-200'
-                          : 'text-gray-900 group-hover:text-purple-700'
+                          ? 'text-blue-100 group-hover:text-blue-200'
+                          : 'text-gray-900 group-hover:text-blue-700'
                       } transition-colors`}>
                         {project.title}
                       </h3>
@@ -717,13 +717,13 @@ export default function Portfolio() {
                             key={techName} 
                             className={`px-3 py-1 ${
                               theme === 'dark' 
-                              ? 'bg-purple-800/30 text-purple-200 border border-purple-600/30'
-                              : 'bg-purple-50 text-purple-700 border border-purple-200'
+                              ? 'bg-blue-800/30 text-blue-200 border border-blue-600/30'
+                              : 'bg-blue-50 text-blue-700 border border-blue-200'
                           } rounded-full text-xs font-medium`}                            initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             whileHover={{
                               scale: 1.05,
-                              boxShadow: '0 0 8px rgba(168, 85, 247, 0.4)'
+                              boxShadow: '0 0 8px rgba(30, 64, 175, 0.4)'
                             }}
                             transition={{ delay: index * 0.1 }}
                             viewport={{ once: true }}
@@ -741,14 +741,14 @@ export default function Portfolio() {
                           variant="outline" 
                           className={`${
                             theme === 'dark' 
-                              ? 'border-gray-600 text-gray-300 hover:bg-black-700 hover:text-purple-200 hover:border-purple-500/50'
-                              : 'border-gray-300 text-gray-700 hover:bg-black-100 hover:text-purple-700 hover:border-purple-400/50'
+                              ? 'border-gray-600 text-gray-300 hover:bg-black-700 hover:text-blue-200 hover:border-blue-500/50'
+                              : 'border-gray-300 text-gray-700 hover:bg-black-100 hover:text-blue-700 hover:border-blue-400/50'
                             } flex-1 transition-all duration-300`}                          style={{
                             transition: 'all 0.3s ease'
                           }}
                           onMouseEnter={(e) => {
-                            e.target.style.boxShadow = '0 0 15px rgba(168, 85, 247, 0.3), 0 4px 12px rgba(0,0,0,0.2)';
-                            e.target.style.borderColor = 'rgba(168, 85, 247, 0.5)';
+                            e.target.style.boxShadow = '0 0 15px rgba(30, 64, 175, 0.3), 0 4px 12px rgba(0,0,0,0.2)';
+                            e.target.style.borderColor = 'rgba(30, 64, 175, 0.5)';
                           }}
                           onMouseLeave={(e) => {
                             e.target.style.boxShadow = '';
@@ -765,18 +765,18 @@ export default function Portfolio() {
                         <Button 
                           className={`${
                             theme === 'dark' 
-                              ? 'bg-purple-600 hover:bg-purple-700 text-white hover:text-purple-100'
-                              : 'bg-purple-600 hover:bg-purple-700 text-white hover:text-purple-100'
+                              ? 'bg-blue-600 hover:bg-blue-700 text-white hover:text-blue-100'
+                              : 'bg-blue-600 hover:bg-blue-700 text-white hover:text-blue-100'
                           } flex-1 transition-all duration-300`}                          style={{
-                            boxShadow: '0 0 8px rgba(168, 85, 247, 0.3)',
+                            boxShadow: '0 0 8px rgba(30, 64, 175, 0.3)',
                             transition: 'all 0.3s ease'
                           }}
                           onMouseEnter={(e) => {
-                            e.target.style.boxShadow = '0 0 20px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.4), 0 4px 12px rgba(0,0,0,0.2)';
+                            e.target.style.boxShadow = '0 0 20px rgba(30, 64, 175, 0.6), 0 0 30px rgba(30, 64, 175, 0.4), 0 4px 12px rgba(0,0,0,0.2)';
                             e.target.style.filter = 'brightness(1.1)';
                           }}
                           onMouseLeave={(e) => {
-                            e.target.style.boxShadow = '0 0 8px rgba(168, 85, 247, 0.3)';
+                            e.target.style.boxShadow = '0 0 8px rgba(30, 64, 175, 0.3)';
                             e.target.style.filter = '';
                           }}
                           onClick={() => window.open(project.demo, '_blank')}
@@ -804,7 +804,7 @@ export default function Portfolio() {
       </section>
 
       <section id="skills" className={`relative ${
-        theme === 'dark' ? 'bg-black text-purple-100' : 'bg-gray-50 text-gray-900'
+        theme === 'dark' ? 'bg-black text-blue-100' : 'bg-gray-50 text-gray-900'
       } py-20 px-6`}>
           <motion.div 
           className="max-w-7xl mx-auto relative z-10"
@@ -819,8 +819,8 @@ export default function Portfolio() {
           >
             <span className={`text-transparent bg-clip-text ${
               theme === 'dark' 
-                ? 'bg-gradient-to-r from-purple-400 to-gray-300'
-                : 'bg-gradient-to-r from-purple-600 to-gray-700'
+                ? 'bg-gradient-to-r from-blue-400 to-gray-300'
+                : 'bg-gradient-to-r from-blue-600 to-gray-700'
             }`}>{t.skillsTitle}</span> {t.skillsTitleHighlight}          </motion.h2>
           
           <div className="space-y-12">
@@ -835,7 +835,7 @@ export default function Portfolio() {
               >
                 <motion.h3 
                   className={`text-2xl font-bold text-center ${
-                    theme === 'dark' ? 'text-purple-300' : 'text-purple-700'
+                    theme === 'dark' ? 'text-blue-300' : 'text-blue-700'
                   } flex items-center justify-center gap-3`}                  variants={fadeInUp}
                 >
                   <span className="text-3xl">{category.icon}</span>
@@ -861,13 +861,13 @@ export default function Portfolio() {
                       <motion.div 
                         className={`${
                           theme === 'dark' 
-                            ? 'bg-[#0D0D0D] hover:bg-purple-950 border-gray-700 hover:border-purple-600'
-                            : 'bg-white hover:bg-purple-50 border-gray-200 hover:border-purple-400'
+                            ? 'bg-[#0D0D0D] hover:bg-blue-950 border-gray-700 hover:border-blue-600'
+                            : 'bg-white hover:bg-blue-50 border-gray-200 hover:border-blue-400'
                         } border rounded-2xl p-4 text-center transition-all duration-300 shadow-lg hover:shadow-xl h-full flex flex-col items-center justify-center min-h-[120px]`}
                         whileHover={{
                           boxShadow: theme === 'dark' 
-                            ? '0 10px 30px rgba(168, 85, 247, 0.2), 0 0 15px rgba(168, 85, 247, 0.1)'
-                            : '0 10px 30px rgba(168, 85, 247, 0.15), 0 0 15px rgba(168, 85, 247, 0.08)'
+                            ? '0 10px 30px rgba(30, 64, 175, 0.2), 0 0 15px rgba(30, 64, 175, 0.1)'
+                            : '0 10px 30px rgba(30, 64, 175, 0.15), 0 0 15px rgba(30, 64, 175, 0.08)'
                         }}
                       >
                         <motion.div 
@@ -876,15 +876,15 @@ export default function Portfolio() {
                             boxShadow: '0 0 15px rgba(168, 85, 247, 0.4)'
                           }}
                           style={{
-                            filter: tech.color.includes('purple') ? 'drop-shadow(0 0 4px rgba(168, 85, 247, 0.3))' : ''
+                            filter: tech.color.includes('blue') ? 'drop-shadow(0 0 4px rgba(30, 64, 175, 0.3))' : ''
                           }}
                         >
                           {tech.icon}
                         </motion.div>
                         <span className={`${
                           theme === 'dark' 
-                            ? 'text-gray-300 group-hover:text-purple-300'
-                            : 'text-gray-700 group-hover:text-purple-700'
+                            ? 'text-gray-300 group-hover:text-blue-300'
+                            : 'text-gray-700 group-hover:text-blue-700'
                         } font-medium text-sm text-center`}>
                           {tech.name}
                         </span>
@@ -899,7 +899,7 @@ export default function Portfolio() {
       </section>
 
       <section id="contact" className={`relative ${
-        theme === 'dark' ? 'bg-black text-purple-100' : 'bg-white text-gray-900'
+        theme === 'dark' ? 'bg-black text-blue-100' : 'bg-white text-gray-900'
       } py-20 px-6`}>        <motion.div 
           className="max-w-3xl mx-auto text-center relative z-10"
           initial="initial"
@@ -913,8 +913,8 @@ export default function Portfolio() {
           >
             {t.contactTitle} <span className={`text-transparent bg-clip-text ${
               theme === 'dark' 
-                ? 'bg-gradient-to-r from-purple-400 to-purple-200'
-                : 'bg-gradient-to-r from-purple-600 to-purple-800'
+                ? 'bg-gradient-to-r from-blue-400 to-blue-200'
+                : 'bg-gradient-to-r from-blue-600 to-blue-800'
             }`}>{t.contactTitleHighlight}</span> {t.contactTitleEnd}
           </motion.h2>
           
@@ -934,7 +934,7 @@ export default function Portfolio() {
             <motion.a 
               href="mailto:geraldo.alves@gerfy.tech" 
               className={`${
-                theme === 'dark' ? 'text-purple-300 hover:text-purple-200' : 'text-purple-600 hover:text-purple-700'
+                theme === 'dark' ? 'text-blue-300 hover:text-blue-200' : 'text-blue-600 hover:text-blue-700'
               } transition-colors text-lg`}              whileHover={{ 
                 scale: 1.05,
                 textShadow: '0 0 8px rgba(168, 85, 247, 0.6)'
@@ -949,7 +949,7 @@ export default function Portfolio() {
                 target="_blank"
                 rel="noopener noreferrer"              
                 className={`${
-                theme === 'dark' ? 'text-purple-300 hover:text-purple-200' : 'text-purple-600 hover:text-purple-700'
+                theme === 'dark' ? 'text-blue-300 hover:text-blue-200' : 'text-blue-600 hover:text-blue-700'
               } transition-colors text-lg`}              whileHover={{ 
                 scale: 1.05,
                 textShadow: '0 0 8px rgba(168, 85, 247, 0.6)'
@@ -966,10 +966,10 @@ export default function Portfolio() {
             <Button 
               className={`${
                 theme === 'dark' 
-                  ? 'bg-gray-900 hover:bg-gray-700 text-purple-200'
-                  : 'bg-gray-100 hover:bg-gray-200 text-purple-700 border border-gray-300'
+                  ? 'bg-gray-900 hover:bg-gray-700 text-blue-200'
+                  : 'bg-gray-100 hover:bg-gray-200 text-blue-700 border border-gray-300'
               } px-8 py-3 transition-all duration-300`}              style={{
-                boxShadow: '0 0 8px rgba(168, 85, 247, 0.2)',
+                boxShadow: '0 0 8px rgba(30, 64, 175, 0.2)',
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
@@ -988,8 +988,8 @@ export default function Portfolio() {
               variant="outline" 
             className={`${
                 theme === 'dark' 
-                  ? 'border-gray-600 text-gray-400 hover:bg-gray-800 hover:text-purple-200'
-                  : 'border-gray-300 text-gray-600 hover:bg-gray-100 hover:text-purple-700'
+                  ? 'border-gray-600 text-gray-400 hover:bg-gray-800 hover:text-blue-200'
+                  : 'border-gray-300 text-gray-600 hover:bg-gray-100 hover:text-blue-700'
               } px-8 py-3 transition-all duration-300`}
                 style={{
                 transition: 'all 0.3s ease'
