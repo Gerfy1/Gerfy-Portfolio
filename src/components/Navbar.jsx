@@ -99,10 +99,10 @@ export default function Navbar() {
                   onClick={() => scrollToSection(item.id)}
                   className={`text-sm font-medium transition-colors duration-200 relative ${
                     activeSection === item.id ? 
-                      'text-purple-300' : 
+                      'text-blue-300' : 
                       (theme === 'dark' 
-                        ? 'text-gray-300 hover:text-purple-200' 
-                        : 'text-gray-700 hover:text-purple-600'
+                        ? 'text-gray-300 hover:text-blue-200' 
+                        : 'text-gray-700 hover:text-blue-900'
                       )
                   }`}
                   whileHover={{ y: -2 }}
@@ -111,7 +111,7 @@ export default function Navbar() {
                   {item.label}
                   {activeSection === item.id && (
                     <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-gray-500"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-800 to-gray-500"
                       layoutId="activeSection"
                       initial={false}
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -168,14 +168,14 @@ export default function Navbar() {
               {/* botao de contato */}
               <motion.button
                 onClick={() => scrollToSection('contact')}
-                className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 border border-purple-500/30 hover:border-purple-400/50"
+                className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 border border-blue-800/30 hover:border-blue-700/50"
                 style={{
-                  boxShadow: '0 0 8px rgba(168, 85, 247, 0.3), 0 2px 4px rgba(0,0,0,0.2)',
+                  boxShadow: '0 0 8px rgba(30, 64, 175, 0.3), 0 2px 4px rgba(0,0,0,0.2)',
                   transition: 'all 0.3s ease'
                 }}
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: '0 0 20px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.4), 0 4px 8px rgba(0,0,0,0.2)'
+                  boxShadow: '0 0 20px rgba(30, 64, 175, 0.6), 0 0 30px rgba(30, 64, 175, 0.4), 0 4px 8px rgba(0,0,0,0.2)'
                 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -189,8 +189,8 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`p-2 rounded-lg transition-colors ${
                   theme === 'dark' 
-                    ? 'text-purple-200 hover:text-white hover:bg-black-800' 
-                    : 'text-purple-600 hover:text-purple-800 hover:bg-black-100'
+                    ? 'text-blue-200 hover:text-white hover:bg-black-800' 
+                    : 'text-blue-900 hover:text-blue-800 hover:bg-black-100'
                 }`}
                 whileTap={{ scale: 0.95 }}
                 whileHover={{
@@ -253,11 +253,11 @@ export default function Navbar() {
                     className={`w-full text-left p-3 rounded-lg transition-colors ${
                       activeSection === item.id
                         ? (theme === 'dark' 
-                            ? 'bg-purple-600/20 text-purple-300 border border-purple-500/30' 
-                            : 'bg-purple-100 text-purple-700 border border-purple-300/50')
+                            ? 'bg-blue-900/20 text-blue-300 border border-blue-800/30' 
+                            : 'bg-blue-100 text-blue-700 border border-blue-300/50')
                         : (theme === 'dark'
-                            ? 'text-gray-300 hover:bg-gray-800 hover:text-purple-200'
-                            : 'text-gray-700 hover:bg-gray-100 hover:text-purple-600')
+                            ? 'text-gray-300 hover:bg-gray-800 hover:text-blue-200'
+                            : 'text-gray-700 hover:bg-gray-100 hover:text-blue-900')
                     }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -277,8 +277,8 @@ export default function Navbar() {
                     onClick={toggleTheme}
                     className={`flex-1 p-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                       theme === 'dark' ?
-                        'bg-[#0D0D0D] hover:bg-[#1A1A1A] text-yellow-400 border border-purple-800/20' :
-                        'bg-white hover:bg-purple-50 text-gray-800 border border-purple-100'
+                        'bg-[#0D0D0D] hover:bg-[#1A1A1A] text-yellow-400 border border-blue-800/20' :
+                        'bg-white hover:bg-blue-50 text-gray-800 border border-blue-100'
                       }`}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
@@ -292,8 +292,8 @@ export default function Navbar() {
                     onClick={toggleLanguage}
                     className={`flex-1 p-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                       theme === 'dark' ?
-                        'bg-[#0D0D0D] hover:bg-[#1A1A1A] border border-purple-800/20' :
-                        'bg-white hover:bg-purple-50 border border-purple-100'
+                        'bg-[#0D0D0D] hover:bg-[#1A1A1A] border border-blue-800/20' :
+                        'bg-white hover:bg-blue-50 border border-blue-100'
                       } flex items-center space-x-2`}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
@@ -308,9 +308,9 @@ export default function Navbar() {
                 {/* contat */}
                 <motion.button
                   onClick={() => scrollToSection('contact')}
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-lg font-medium transition-all duration-300 border border-purple-500/30"
+                  className="w-full bg-blue-900 hover:bg-blue-800 text-white p-3 rounded-lg font-medium transition-all duration-300 border border-blue-800/30"
                   style={{
-                    boxShadow: '0 0 8px rgba(168, 85, 247, 0.3)'
+                    boxShadow: '0 0 8px rgba(30, 64, 175, 0.3)'
                   }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
