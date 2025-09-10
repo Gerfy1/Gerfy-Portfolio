@@ -33,13 +33,13 @@ const translations = {
     welcome: 'Bem-vindo ao meu universo digital. Explore meus projetos e descubra como transformo ideias em soluções inovadoras.',
     tagline: 'TRANSFORMANDO IDEIAS EM REALIDADE',
     typedStrings: [
-      `Oi, eu sou o <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Geraldo</span>`,
+      `Oi, eu sou o <span class="${theme === 'dark' ? 'text-blue-300' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Geraldo</span>`,
 
-      `Sou <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Desenvolvedor Full Stack</span>`,
+      `Sou <span class="${theme === 'dark' ? 'text-blue-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Desenvolvedor Full Stack</span>`,
 
-      `Transformo <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">ideias em código</span>`,
+      `Transformo <span class="${theme === 'dark' ? 'text-blue-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">ideias em código</span>`,
 
-      `Apaixonado por <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">tecnologia</span> <span class="text-yellow-400">💻</span>`,
+      `Apaixonado por <span class="${theme === 'dark' ? 'text-blue-200' : 'text-black-800'} font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">tecnologia</span> <span class="text-yellow-400">💻</span>`,
     ],
 
     aboutTitle: 'Sobre',
@@ -121,10 +121,10 @@ const translations = {
     welcome: 'Welcome to my digital universe. Explore my projects and discover how I transform ideas into innovative solutions.',
     tagline: 'SHAPING IDEAS INTO REALITY',
     typedStrings: [
-      `Hi, I'm <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold">Geraldo</span>`,
-      `I'm a <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold">Full Stack Developer</span>`,
-      `I transform <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold">ideas into code</span>`,
-      `Passionate about <span class="${theme === 'dark' ? 'text-purple-200' : 'text-black-800'} font-bold">technology</span> <span class="text-yellow-400">💻</span>`,
+      `Hi, I'm <span class="${theme === 'dark' ? 'text-blue-200' : 'text-black-800'} font-bold">Geraldo</span>`,
+      `I'm a <span class="${theme === 'dark' ? 'text-blue-200' : 'text-black-800'} font-bold">Full Stack Developer</span>`,
+      `I transform <span class="${theme === 'dark' ? 'text-blue-200' : 'text-black-800'} font-bold">ideas into code</span>`,
+      `Passionate about <span class="${theme === 'dark' ? 'text-blue-200' : 'text-black-800'} font-bold">technology</span> <span class="text-yellow-400">💻</span>`,
     ],
     
     aboutTitle: 'About',
