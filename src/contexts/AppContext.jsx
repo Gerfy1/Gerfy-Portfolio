@@ -64,11 +64,11 @@ const translations = {
     projects: {
       forumhub: {
         title: 'Forum HUB',
-        description: 'O Fórum hub é um desafio proposto pela a alura na conclusão do programa Oracle ONE. O projeto é utilizado para consolidar conhecimento e replicar a parte de Back-End do forum Alura.'
+        description: 'Fórum hub é um desafio proposto pela a alura na conclusão do programa Oracle ONE. O projeto é utilizado para consolidar conhecimento e replicar a parte de Back-End do forum Alura.'
       },
       medapi: {
         title: 'MedAPI',
-        description: 'O MedAPI é um projeto que visa demonstrar a aplicação prática dessas tecnologias e práticas no contexto de desenvolvimento de APIs RESTful para aplicações corporativas.'
+        description: 'MedAPI é um projeto que visa demonstrar a aplicação prática dessas tecnologias e práticas no contexto de desenvolvimento de APIs RESTful para aplicações corporativas.'
       },
       fipeapp: {
         title: 'FipeAPP',
@@ -149,11 +149,11 @@ const translations = {
     projects: {
       forumhub: {
         title: 'Forum HUB',
-        description: 'The Hub Forum is a challenge proposed by Alura at the conclusion of the Oracle ONE program. The project is used to consolidate knowledge and replicate part of the Alura Forum Back-End.'
+        description: 'Hub Forum is a challenge proposed by Alura at the conclusion of the Oracle ONE program. The project is used to consolidate knowledge and replicate part of the Alura Forum Back-End.'
       },
       medapi: {
         title: 'MedAPI',
-        description: 'MedAPI: This project aims to demonstrate the practical application of these technologies and practices in the context of developing RESTful APIs for corporate applications.'
+        description: 'MedAPI is a project that aims to demonstrate the practical application of these technologies and practices in the context of developing RESTful APIs for corporate applications.'
       },
       fipeapp: {
         title: 'FipeAPP',
@@ -161,11 +161,11 @@ const translations = {
       },
       jobsMemory: {
         title: 'Jobs Memory',
-        description: 'Complete application to organize and track job applications, with intuitive dashboard and reminder system.'
+        description: 'Jobs Memory is a comprehensive application for organizing and tracking job applications, with an intuitive dashboard and reminder system.'
       },
       managementSystem: {
-        title: 'Management System',
-        description: 'Robust business solution built with Java Spring and React, providing complete customer, sales and inventory management. Features executive dashboard with real-time metrics, customizable reports, payment API integration and automated notification system.'
+        title: 'Management Platform',
+        description: 'Robust business solution built with Java, Spring and React, providing complete customer, sales and inventory management. Features executive dashboard with real-time metrics, customizable reports, payment API integration and automated notification system.'
       },
        port: {
         title: 'Interactive Portfolio',
