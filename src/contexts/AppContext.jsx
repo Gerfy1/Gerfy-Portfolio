@@ -68,7 +68,7 @@ const translations = {
       },
       medapi: {
         title: 'MedAPI',
-        description: 'O projeto visa demonstrar a aplicação prática dessas tecnologias e práticas no contexto de desenvolvimento de APIs RESTful para aplicações corporativas.'
+        description: 'O MedAPI é um projeto que visa demonstrar a aplicação prática dessas tecnologias e práticas no contexto de desenvolvimento de APIs RESTful para aplicações corporativas.'
       },
       fipeapp: {
         title: 'FipeAPP',
@@ -76,11 +76,11 @@ const translations = {
       },
       jobsMemory: {
         title: 'Jobs Memory',
-        description: 'Aplicação completa para organizar e acompanhar candidaturas de emprego, com dashboard intuitivo e sistema de lembretes.'
+        description: 'Jobs Memory é uma aplicação completa para organizar e acompanhar candidaturas de emprego, com dashboard intuitivo e sistema de lembretes.'
       },
       managementSystem: {
-        title: 'Sistema de Gestão Empresarial',
-        description: 'Solução empresarial robusta desenvolvida com Java Spring e React, oferecendo gestão completa de clientes, vendas e estoque. Inclui dashboard executivo com métricas em tempo real, relatórios personalizáveis, integração com APIs de pagamento e sistema de notificações automatizadas.'
+        title: 'Plataforma de Gestão',
+        description: 'Solução empresarial robusta desenvolvida com Java, Spring e React, oferecendo gestão completa de clientes, vendas e estoque. Inclui dashboard executivo com métricas em tempo real, relatórios personalizáveis, integração com APIs de pagamento e sistema de notificações automatizadas.'
       },
       port: {
         title: 'Portfólio Interativo',
