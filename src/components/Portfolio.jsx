@@ -639,7 +639,7 @@ export default function Portfolio() {
                 description: t.projects.jobsMemory.description,
                 tech: ["Java","Spring","TypeScript", "Angular", "MySQL","Git", "Docker", "Figma", "Vercel", "Render"],
                 color: "from-blue-700 to-white",
-                status: "inDevelopment",
+                status: "completed",
                 github: "https://github.com/geraldo/jobs-memory",
                 demo: "https://login-angular-memory.vercel.app/login"
               },
