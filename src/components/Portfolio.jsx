@@ -973,13 +973,15 @@ export default function Portfolio() {
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 0 20px rgba(168, 85, 247, 0.4), 0 0 30px rgba(168, 85, 247, 0.2), 0 4px 12px rgba(0,0,0,0.2)';
-                e.target.style.color = 'rgb(221, 214, 254)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.boxShadow = '0 0 8px rgba(168, 85, 247, 0.2)';
-                e.target.style.color = '';
-              }}
+              e.target.style.boxShadow =
+                '0 0 20px rgba(37, 99, 235, 0.4), 0 0 30px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(0,0,0,0.2)';
+              e.target.style.color = 'rgb(191, 219, 254)'; 
+            }}
+            
+            onMouseLeave={(e) => {
+              e.target.style.boxShadow = 'none';
+              e.target.style.color = ''; 
+            }}
               onClick={() => window.open('https://www.linkedin.com/in/geraldoaafilho', '_blank')}
             >
               {t.contactButtons.linkedin}
@@ -994,14 +996,16 @@ export default function Portfolio() {
                 style={{
                 transition: 'all 0.3s ease'
               }}
-              onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 0 15px rgba(168, 85, 247, 0.3), 0 4px 12px rgba(0,0,0,0.2)';
-                e.target.style.borderColor = 'rgba(168, 85, 247, 0.5)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.boxShadow = '';
-                e.target.style.borderColor = '';
-              }}
+             onMouseEnter={(e) => {
+              e.target.style.boxShadow =
+                '0 0 20px rgba(37, 99, 235, 0.4), 0 0 30px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(0,0,0,0.2)';
+              e.target.style.color = 'rgb(191, 219, 254)';
+            }}
+            
+            onMouseLeave={(e) => {
+              e.target.style.boxShadow = 'none';
+              e.target.style.color = '';
+            }}
             onClick={() => window.open('https://github.com/Gerfy1', '_blank')}
             >
               {t.contactButtons.github}
