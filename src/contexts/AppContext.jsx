@@ -109,7 +109,7 @@ const translations = {
       github: 'GitHub'
     },
     
-    footer: 'Feito com ❤️ e muito ☕'
+    footer: 'Feito com muito cafézão ☕'
   },
   en: {
     inicio: 'Home',
@@ -194,7 +194,7 @@ const translations = {
       github: 'GitHub'
     },
     
-    footer: 'Made with ❤️ and lots of ☕'
+    footer: 'Made with lots and lots of coffee ☕'
   }
 };
 
