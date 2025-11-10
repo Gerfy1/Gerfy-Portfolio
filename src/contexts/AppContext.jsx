@@ -94,10 +94,9 @@ const translations = {
       languages: 'Linguagens',
       frameworks: 'Frameworks & Libraries',
       databases: 'Banco de Dados & ORM',
-      cloud: 'Nuvem',
-      hosting: 'Hosting & SaaS',
-      devops: 'CI/CD & VCS',
-      tools: 'Ferramentas'
+      cloud: 'Cloud & DevOps',
+      devops: 'Controle de Versão',
+      tools: 'Ferramentas de Desenvolvimento'
     },
     
     contactTitle: 'Vamos criar algo',
@@ -179,10 +178,9 @@ const translations = {
       languages: 'Languages',
       frameworks: 'Frameworks & Libraries',
       databases: 'Databases & ORM',
-      cloud: 'Cloud',
-      hosting: 'Hosting & SaaS',
-      devops: 'CI/CD & VCS',
-      tools: 'Tools'
+      cloud: 'Cloud & DevOps',
+      devops: 'Version Control',
+      tools: 'Development Tools'
     },
     
     contactTitle: 'Let\'s create something',

@@ -49,55 +49,41 @@ const techCategories = {
   },
   frameworks: {
     title: "Frameworks & Libraries",
-    icon: "🛠️",
+    icon: "",
     techs: [
+      { name: "Spring", icon: "🍃", color: "from-green-500 to-green-700" },
       { name: "Angular", icon: "🅰️", color: "from-red-500 to-red-700" },
       { name: "React", icon: "⚛️", color: "from-cyan-400 to-blue-600" },
       { name: "React Native", icon: "📱", color: "from-blue-400 to-cyan-500" },
-      { name: "Spring", icon: "🍃", color: "from-green-500 to-green-700" },
       { name: "Node.js", icon: "🟢", color: "from-green-600 to-green-800" },
-      { name: "Tailwind", icon: "🎨", color: "from-cyan-500 to-teal-600" },
-      { name: "Bootstrap", icon: "🖌", color: "from-blue-800 to-blue-900" },
-      { name: "WordPress", icon: "📝", color: "from-blue-600 to-gray-700" },
-      { name: "NPM", icon: "📦", color: "from-red-500 to-red-700" },
-      { name: "Yarn", icon: "🧶", color: "from-blue-500 to-cyan-600" },
-      { name: "JWT", icon: "🔐", color: "from-gray-600 to-black" }
+      { name: "Tailwind CSS", icon: "🎨", color: "from-cyan-500 to-teal-600" },
+      { name: "Bootstrap", icon: "🖌", color: "from-blue-800 to-blue-900" }
     ]
   },
   databases: {
     title: "Banco de Dados & ORM",
-    icon: "🗄️",
+    icon: "",
     techs: [
       { name: "PostgreSQL", icon: "🐘", color: "from-blue-600 to-indigo-700" },
       { name: "MySQL", icon: "🐬", color: "from-orange-500 to-yellow-600" },
-      { name: "Hibernate", icon: "💾", color: "from-amber-600 to-orange-700" },
-      { name: "phpMyAdmin", icon: "🔧", color: "from-blue-500 to-blue-900" }
+      { name: "Hibernate", icon: "💾", color: "from-amber-600 to-orange-700" }
     ]
   },
   cloud: {
-    title: "Nuvem",
-    icon: "☁️",
+    title: "Cloud & DevOps",
+    icon: "",
     techs: [
-      { name: "Google Cloud", icon: "🌥️", color: "from-blue-500 to-green-500" },
       { name: "AWS", icon: "🌩️", color: "from-orange-500 to-yellow-500" },
-      { name: "Oracle Cloud", icon: "🔴", color: "from-red-600 to-red-800" }
-    ]
-  },
-  hosting: {
-    title: "Hosting & SaaS",
-    icon: "🌐",
-    techs: [
-      { name: "Oracle", icon: "🔴", color: "from-red-600 to-red-800" },
+      { name: "Oracle Cloud", icon: "🔴", color: "from-red-600 to-red-800" },
+      { name: "Google Cloud", icon: "🌥️", color: "from-blue-500 to-green-500" },
+      { name: "Docker", icon: "🐳", color: "from-blue-500 to-blue-700" },
       { name: "Vercel", icon: "▲", color: "from-gray-800 to-black" },
-      { name: "Render", icon: "🚀", color: "from-blue-900 to-pink-600" },
-      { name: "Cloudflare", icon: "🌩️", color: "from-orange-500 to-yellow-500" },
-      { name: "Hostinger", icon: "🏠", color: "from-blue-800 to-blue-600" },
-      { name: "GitHub Pages", icon: "📄", color: "from-gray-700 to-gray-900" }
+      { name: "Render", icon: "🚀", color: "from-blue-200 to-blue-700" }
     ]
   },
   devops: {
-    title: "CI/CD & VCS",
-    icon: "🔄",
+    title: "Controle de Versão",
+    icon: "",
     techs: [
       { name: "Git", icon: "📦", color: "from-orange-600 to-red-600" },
       { name: "GitHub", icon: "🐱", color: "from-gray-700 to-gray-900" },
@@ -106,16 +92,12 @@ const techCategories = {
     ]
   },
   tools: {
-    title: "Ferramentas",
-    icon: "🔧",
+    title: "Ferramentas de Desenvolvimento",
+    icon: "",
     techs: [
-      { name: "Figma", icon: "🎭", color: "from-blue-800 to-pink-500" },
+      { name: "Figma", icon: "🎭", color: "from-gray-400 to-blue-500" },
       { name: "Postman", icon: "📮", color: "from-orange-500 to-red-500" },
-      { name: "Notion", icon: "📝", color: "from-gray-600 to-gray-800" },
-      { name: "Trello", icon: "📋", color: "from-blue-500 to-blue-700" },
       { name: "Insomnia", icon: "😴", color: "from-blue-900 to-indigo-700" },
-      { name: "Twilio", icon: "📞", color: "from-red-500 to-pink-600" },
-      { name: "Hugo", icon: "⚡", color: "from-pink-500 to-rose-600" },
       { name: "Swagger UI", icon: "📊", color: "from-green-500 to-blue-600" }
     ]
   }
