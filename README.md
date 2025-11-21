@@ -1,6 +1,6 @@
 #  Portfólio Pessoal - Geraldo Alves
 
-Esse projeto foi desenvolvido com React + Vite, showcasing minha jornada como desenvolvedor Full Stack. O projeto apresenta uma interface elegante com animações fluidas, tema dark/light e suporte multilíngue.
+Esse projeto foi desenvolvido com React + Vite, showcasing minha jornada como desenvolvedor. O projeto apresenta uma interface elegante com animações fluidas, tema dark/light e suporte multilíngue
 
 ##  Características
 
@@ -11,22 +11,21 @@ Esse projeto foi desenvolvido com React + Vite, showcasing minha jornada como de
 -  **Performance**: Otimizado com Vite e animações Framer Motion
 -  **Animações**: Efeitos visuais interativos e transições fluidas
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
-- **Frontend**: React 18, JavaScript ES6+
+- **Frontend**: React e JS
 - **Styling**: Tailwind CSS, CSS personalizado
 - **Animações**: Framer Motion, Typed.js
 - **Build**: Vite
 - **Deploy**: Vercel
-- **Controle de Versão**: Git, GitHub
 
 ##  Responsividade
 
 O design é totalmente responsivo, adaptando-se perfeitamente a:
-- 📱 Mobile (320px+)
-- 📟 Tablet (768px+)
-- 💻 Desktop (1024px+)
-- 🖥️ Large Desktop (1440px+)
+-  Mobile (320px+)
+-  Tablet (768px+)
+-  Desktop (1024px+)
+-  Large Desktop (1440px+)
 
 ## 🎨 Paleta de Cores
 
