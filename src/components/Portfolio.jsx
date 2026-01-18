@@ -44,7 +44,8 @@ const techCategories = {
       { name: "TypeScript", icon: "📘", color: "from-blue-500 to-blue-700" },
       { name: "JavaScript", icon: "⚡", color: "from-yellow-400 to-orange-500" },
       { name: "Python", icon: "🐍", color: "from-green-400 to-blue-600" },
-      { name: "PHP", icon: "🌐", color: "from-blue-900 to-blue-600" }
+      { name: "PHP", icon: "🌐", color: "from-blue-900 to-blue-600" },
+      { name: "Go", icon: "🔵", color: "from-cyan-400 to-blue-600" }
     ]
   },
   frameworks: {
@@ -57,7 +58,8 @@ const techCategories = {
       { name: "React Native", icon: "📱", color: "from-blue-400 to-cyan-500" },
       { name: "Node.js", icon: "🟢", color: "from-green-600 to-green-800" },
       { name: "Tailwind CSS", icon: "🎨", color: "from-cyan-500 to-teal-600" },
-      { name: "Bootstrap", icon: "🖌", color: "from-blue-800 to-blue-900" }
+      { name: "Bootstrap", icon: "🖌", color: "from-blue-800 to-blue-900" },
+      { name: "Vue", icon: "💚", color: "from-green-400 to-emerald-600" }
     ]
   },
   databases: {
@@ -78,7 +80,8 @@ const techCategories = {
       { name: "Google Cloud", icon: "🌥️", color: "from-blue-500 to-green-500" },
       { name: "Docker", icon: "🐳", color: "from-blue-500 to-blue-700" },
       { name: "Vercel", icon: "▲", color: "from-gray-800 to-black" },
-      { name: "Render", icon: "🚀", color: "from-blue-200 to-blue-700" }
+      { name: "Render", icon: "🚀", color: "from-blue-200 to-blue-700" },
+      { name: "Proxmox", icon: "🖥️", color: "from-orange-600 to-red-700" }
     ]
   },
   devops: {
@@ -98,7 +101,8 @@ const techCategories = {
       { name: "Figma", icon: "🎭", color: "from-gray-400 to-blue-500" },
       { name: "Postman", icon: "📮", color: "from-orange-500 to-red-500" },
       { name: "Insomnia", icon: "😴", color: "from-blue-900 to-indigo-700" },
-      { name: "Swagger UI", icon: "📊", color: "from-green-500 to-blue-600" }
+      { name: "Swagger UI", icon: "📊", color: "from-green-500 to-blue-600" },
+      { name: "NSIS", icon: "📦", color: "from-gray-600 to-blue-700" }
     ]
   }
 };
@@ -587,6 +591,16 @@ export default function Portfolio() {
             {[
               {
                 id: 1,
+                title: t.projects.rustdeskInfra.title,
+                description: t.projects.rustdeskInfra.description,
+                tech: ["Docker", "Git", "TypeScript", "Proxmox", "NSIS", "Go", "Vue"],
+                color: "from-blue-600 to-white",
+                status: "completed",
+                github: null,
+                demo: "https://www.linkedin.com/posts/geraldoaafilho_durante-minha-experi%C3%AAncia-como-estagi%C3%A1rio-activity-7413949555374940160-mtk_/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJrKPgBqqMpuQzIH0l3KIyXmu0FSeX4QCU"
+              },
+              {
+                id: 2,
                 title: t.projects.forumhub.title,
                 description: t.projects.forumhub.description,
                 tech: ["Java", "Spring", "PostgreSQL","Swagger UI", "Git"],
@@ -596,7 +610,7 @@ export default function Portfolio() {
                 demo: null
               },
               {
-                id: 2,
+                id: 3,
                 title: t.projects.medapi.title,
                 description: t.projects.medapi.description,
                 tech: ["Java", "Spring", "MySQL", "Swagger UI", "Git", "Trello", "Figma"],
@@ -606,7 +620,7 @@ export default function Portfolio() {
                 demo: null
               },
               {
-               id: 3,
+               id: 4,
                 title: t.projects.fipeapp.title,
                 description: t.projects.fipeapp.description,
                 tech: ["Java", "Insomnia", "Swagger UI", "Git", "Notion"],
@@ -616,7 +630,7 @@ export default function Portfolio() {
                 demo: null
               },
               {
-                id: 4,
+                id: 5,
                 title: t.projects.jobsMemory.title,
                 description: t.projects.jobsMemory.description,
                 tech: ["Java","Spring","TypeScript", "Angular", "MySQL","Git", "Docker", "Figma", "Vercel", "Render"],
@@ -624,16 +638,6 @@ export default function Portfolio() {
                 status: "completed",
                 github: "https://github.com/geraldo/jobs-memory",
                 demo: "https://login-angular-memory.vercel.app/login"
-              },
-              {
-                id: 5,
-                title: t.projects.managementSystem.title,
-                description: t.projects.managementSystem.description,
-                tech: ["Java", "Spring", "PostgreSQL", "Oracle Cloud", "Git", "React"],
-                color: "from-blue-600 to-white",
-                status: "planning",
-                github: null,
-                demo: null
               },
               {
                 id: 6,
@@ -1000,7 +1004,7 @@ export default function Portfolio() {
         theme === 'dark' ? 'bg-black text-gray-600 border-gray-800' : 'bg-white text-gray-500 border-gray-200'
       } py-8 text-center border-t`}>        
       <p className="relative z-10">
-          &copy; 2025 Geraldo. {t.footer}
+          &copy; 2026 Geraldo. {t.footer}
         </p>
       </footer>
     </main>
