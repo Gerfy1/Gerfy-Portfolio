@@ -18,7 +18,8 @@ import {
   FaGit,
   FaGithub,
   FaGitlab,
-
+  FaExternalLinkAlt,
+  FaClock,
   FaAmazon
 } from 'react-icons/fa';
 import {
@@ -830,7 +831,7 @@ export default function Portfolio() {
                           onClick={() => window.open(project.github, '_blank')}
                         >
                           <span className="flex items-center gap-2">
-                            🐱 {t.projectButtons.github}
+                            <FaGithub size={16} /> {t.projectButtons.github}
                           </span>
                         </Button>
                       )}
@@ -855,15 +856,16 @@ export default function Portfolio() {
                           onClick={() => window.open(project.demo, '_blank')}
                         >
                           <span className="flex items-center gap-2">
-                            👁️ {t.projectButtons.demo}
+                            <FaExternalLinkAlt size={16} /> {t.projectButtons.demo}
                           </span>
                         </Button>
                       )}
                       {!project.github && !project.demo && (
-                        <div className="flex-1 flex items-center justify-center">
+                        <div className="flex-1 flex items-center justify-center gap-2">
                       <span className={`${
                             theme === 'dark' ? 'text-gray-500' : 'text-gray-400'
-                          } text-sm italic`}>                            🚧 {t.projectButtons.inDevelopment}
+                          } text-sm italic flex items-center gap-2`}>
+                            <FaClock size={14} /> {t.projectButtons.inDevelopment}
                           </span>
                         </div>
                       )}
