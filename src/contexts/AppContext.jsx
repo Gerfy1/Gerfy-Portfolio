@@ -44,7 +44,7 @@ const translations = {
 
             `Transformo <span class="${
                 theme === 'dark' ? 'text-blue-200' : 'text-black-800'
-            } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">ideias em código</span>`,
+            } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">ideias em códigos</span>`,
 
             `Apaixonado por <span class="${
                 theme === 'dark' ? 'text-blue-200' : 'text-black-800'

@@ -6,6 +6,44 @@ import Typed from "typed.js";
 import Navbar from "./Navbar";
 import SectionAwareJapaneseText from "./SectionAwareJapaneseText";
 import { useApp } from '/@/contexts/AppContext';
+import {
+  FaJava,
+  FaPython,
+  FaPhp,
+  FaNode,
+  FaReact,
+  FaAngular,
+  FaVuejs,
+  FaDocker,
+  FaGit,
+  FaGithub,
+  FaGitlab,
+
+  FaAmazon
+} from 'react-icons/fa';
+import {
+  SiTypescript,
+  SiJavascript,
+  SiSpringboot,
+  SiPostgresql,
+  SiMysql,
+  SiHibernate,
+
+  SiGooglecloud,
+  SiVercel,
+  SiRender,
+  SiPostman,
+  SiSwagger,
+  SiFigma,
+  SiInsomnia,
+  SiTailwindcss,
+  SiBootstrap,
+  SiNotion,
+  SiTrello,
+
+  SiKotlin,
+  SiGo
+} from 'react-icons/si';
 
 
 const staggerContainer = {
@@ -39,80 +77,123 @@ const techCategories = {
     title: "Linguagens",
     icon: "💻",
     techs: [
-      { name: "Java", icon: "☕", color: "from-orange-500 to-red-600" },
-      { name: "Kotlin", icon: "🎯", color: "from-blue-800 to-indigo-600" },
-      { name: "TypeScript", icon: "📘", color: "from-blue-500 to-blue-700" },
-      { name: "JavaScript", icon: "⚡", color: "from-yellow-400 to-orange-500" },
-      { name: "Python", icon: "🐍", color: "from-green-400 to-blue-600" },
-      { name: "PHP", icon: "🌐", color: "from-blue-900 to-blue-600" },
-      { name: "Go", icon: "🔵", color: "from-cyan-400 to-blue-600" }
+      { name: "Java", icon: "java" },
+      { name: "Kotlin", icon: "kotlin" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "Python", icon: "python" },
+      { name: "PHP", icon: "php" },
+      { name: "Go", icon: "go" }
     ]
   },
   frameworks: {
     title: "Frameworks & Libraries",
     icon: "",
     techs: [
-      { name: "Spring", icon: "🍃", color: "from-green-500 to-green-700" },
-      { name: "Angular", icon: "🅰️", color: "from-red-500 to-red-700" },
-      { name: "React", icon: "⚛️", color: "from-cyan-400 to-blue-600" },
-      { name: "React Native", icon: "📱", color: "from-blue-400 to-cyan-500" },
-      { name: "Node.js", icon: "🟢", color: "from-green-600 to-green-800" },
-      { name: "Tailwind CSS", icon: "🎨", color: "from-cyan-500 to-teal-600" },
-      { name: "Bootstrap", icon: "🖌", color: "from-blue-800 to-blue-900" },
-      { name: "Vue", icon: "💚", color: "from-green-400 to-emerald-600" }
+      { name: "Spring", icon: "springboot" },
+      { name: "Angular", icon: "angular" },
+      { name: "React", icon: "react" },
+      { name: "React Native", icon: "react" },
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Tailwind CSS", icon: "tailwindcss" },
+      { name: "Bootstrap", icon: "bootstrap" },
+      { name: "Vue", icon: "vuejs" }
     ]
   },
   databases: {
     title: "Banco de Dados & ORM",
     icon: "",
     techs: [
-      { name: "PostgreSQL", icon: "🐘", color: "from-blue-600 to-indigo-700" },
-      { name: "MySQL", icon: "🐬", color: "from-orange-500 to-yellow-600" },
-      { name: "Hibernate", icon: "💾", color: "from-amber-600 to-orange-700" }
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "MySQL", icon: "mysql" },
+      { name: "Hibernate", icon: "hibernate" }
     ]
   },
   cloud: {
     title: "Cloud & DevOps",
     icon: "",
     techs: [
-      { name: "AWS", icon: "🌩️", color: "from-orange-500 to-yellow-500" },
-      { name: "Oracle Cloud", icon: "🔴", color: "from-red-600 to-red-800" },
-      { name: "Google Cloud", icon: "🌥️", color: "from-blue-500 to-green-500" },
-      { name: "Docker", icon: "🐳", color: "from-blue-500 to-blue-700" },
-      { name: "Vercel", icon: "▲", color: "from-gray-800 to-black" },
-      { name: "Render", icon: "🚀", color: "from-blue-200 to-blue-700" },
-      { name: "Proxmox", icon: "🖥️", color: "from-orange-600 to-red-700" }
+      { name: "AWS", icon: "amazonaws" },
+      { name: "Oracle Cloud", icon: "oraclecloud" },
+      { name: "Google Cloud", icon: "googlecloud" },
+      { name: "Docker", icon: "docker" },
+      { name: "Vercel", icon: "vercel" },
+      { name: "Render", icon: "render" },
+      { name: "Proxmox", icon: "proxmox" }
     ]
   },
   devops: {
     title: "Controle de Versão",
     icon: "",
     techs: [
-      { name: "Git", icon: "📦", color: "from-orange-600 to-red-600" },
-      { name: "GitHub", icon: "🐱", color: "from-gray-700 to-gray-900" },
-      { name: "GitLab", icon: "🦊", color: "from-orange-500 to-red-500" },
-      { name: "Gradle", icon: "⚙️", color: "from-green-600 to-blue-600" }
+      { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
+      { name: "GitLab", icon: "gitlab" },
+      { name: "Gradle", icon: "gradle" }
     ]
   },
   tools: {
     title: "Ferramentas de Desenvolvimento",
     icon: "",
     techs: [
-      { name: "Figma", icon: "🎭", color: "from-gray-400 to-blue-500" },
-      { name: "Postman", icon: "📮", color: "from-orange-500 to-red-500" },
-      { name: "Insomnia", icon: "😴", color: "from-blue-900 to-indigo-700" },
-      { name: "Swagger UI", icon: "📊", color: "from-green-500 to-blue-600" },
-      { name: "NSIS", icon: "📦", color: "from-gray-600 to-blue-700" }
+      { name: "Figma", icon: "figma" },
+      { name: "Postman", icon: "postman" },
+      { name: "Insomnia", icon: "insomnia" },
+      { name: "Swagger UI", icon: "swagger" },
+      { name: "NSIS", icon: "nsis" }
     ]
   }
 };
 
+// Icon mapping for react-icons
+const iconMap = {
+  java: FaJava,
+  kotlin: SiKotlin,
+  typescript: SiTypescript,
+  javascript: SiJavascript,
+  python: FaPython,
+  php: FaPhp,
+  go: SiGo,
+  springboot: SiSpringboot,
+  angular: FaAngular,
+  react: FaReact,
+  nodejs: FaNode,
+  vuejs: FaVuejs,
+  postgresql: SiPostgresql,
+  mysql: SiMysql,
+  hibernate: SiHibernate,
+  amazonaws: FaAmazon,
+  googlecloud: SiGooglecloud,
+  docker: FaDocker,
+  vercel: SiVercel,
+  render: SiRender,
+  git: FaGit,
+  github: FaGithub,
+  gitlab: FaGitlab,
+
+  figma: SiFigma,
+  postman: SiPostman,
+  insomnia: SiInsomnia,
+  swagger: SiSwagger,
+  tailwindcss: SiTailwindcss,
+  bootstrap: SiBootstrap,
+  
+  proxmox: null,     // No icon available
+  nsis: null         // No icon available
+};
+
+// Create allTechs mapping
 const allTechs = Object.values(techCategories).reduce((acc, category) => {
   category.techs.forEach(tech => {
     acc[tech.name] = tech;
   });
   return acc;
 }, {});
+
+// Helper function to get icon component
+const getIconComponent = (iconKey) => {
+  return iconMap[iconKey] || null;
+};
 
 export default function Portfolio() {
   const [showTextParticles, setShowTextParticles] = useState(false);
@@ -697,15 +778,17 @@ export default function Portfolio() {
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tech.map((techName, index) => {
-                        const tech = allTechs[techName] || { name: techName, icon: "🔧", color: "from-gray-600 to-gray-800" };
+                        const tech = allTechs[techName] || { name: techName, icon: null };
+                        const IconComponent = getIconComponent(tech.icon);
                         return (
                           <motion.span 
                             key={techName} 
-                            className={`px-3 py-1 ${
+                            className={`px-3 py-1 flex items-center gap-2 ${
                               theme === 'dark' 
                               ? 'bg-blue-800/30 text-blue-200 border border-blue-600/30'
                               : 'bg-blue-50 text-blue-700 border border-blue-200'
-                          } rounded-full text-xs font-medium`}                            initial={{ opacity: 0, y: 10 }}
+                          } rounded-full text-xs font-medium`}
+                            initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             whileHover={{
                               scale: 1.05,
@@ -715,7 +798,11 @@ export default function Portfolio() {
                             viewport={{ once: true }}
                             title={techName}
                           >
-                            <span className="text-xs">{tech.icon}</span>
+                            {IconComponent ? (
+                              <IconComponent size={14} />
+                            ) : (
+                              <span className="text-xs">◯</span>
+                            )}
                             {techName}
                           </motion.span>
                         );
@@ -832,51 +919,58 @@ export default function Portfolio() {
                   className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
                   variants={staggerContainer}
                 >
-                  {category.techs.map((tech, index) => (
-                    <motion.div
-                      key={tech.name}
-                      className="group cursor-pointer"
-                      variants={fadeInUp}
-                      whileHover={{ scale: 1.1, y: -5 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: (categoryIndex * 0.1) + (index * 0.05), duration: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      <motion.div 
-                        className={`${
-                          theme === 'dark' 
-                            ? 'bg-[#0D0D0D] hover:bg-blue-950 border-gray-700 hover:border-blue-600'
-                            : 'bg-white hover:bg-blue-50 border-gray-200 hover:border-blue-400'
-                        } border rounded-2xl p-4 text-center transition-all duration-300 shadow-lg hover:shadow-xl h-full flex flex-col items-center justify-center min-h-[120px]`}
-                        whileHover={{
-                          boxShadow: theme === 'dark' 
-                            ? '0 10px 30px rgba(30, 64, 175, 0.2), 0 0 15px rgba(30, 64, 175, 0.1)'
-                            : '0 10px 30px rgba(30, 64, 175, 0.15), 0 0 15px rgba(30, 64, 175, 0.08)'
-                        }}
+                  {category.techs.map((tech, index) => {
+                    const IconComponent = getIconComponent(tech.icon);
+                    return (
+                      <motion.div
+                        key={tech.name}
+                        className="group cursor-pointer"
+                        variants={fadeInUp}
+                        whileHover={{ scale: 1.05, y: -4 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: (categoryIndex * 0.1) + (index * 0.05), duration: 0.6 }}
+                        viewport={{ once: true }}
                       >
                         <motion.div 
-                          className={`w-12 h-12 mx-auto mb-3 rounded-lg bg-gradient-to-br ${tech.color} flex items-center justify-center text-white font-bold text-2xl`}
+                          className={`${
+                            theme === 'dark' 
+                              ? 'bg-[#1a1a1a] border-[#404040] hover:border-[#0ea5e9] hover:bg-[#1a1a2e]'
+                              : 'bg-white border-[#e5e7eb] hover:border-[#3b82f6] hover:bg-[#f8f9fa]'
+                          } border rounded-xl p-5 text-center transition-all duration-300 h-full flex flex-col items-center justify-center min-h-[110px] group`}
                           whileHover={{
-                            boxShadow: '0 0 15px rgba(168, 85, 247, 0.4)'
-                          }}
-                          style={{
-                            filter: tech.color.includes('blue') ? 'drop-shadow(0 0 4px rgba(30, 64, 175, 0.3))' : ''
+                            boxShadow: theme === 'dark' 
+                              ? '0 4px 12px rgba(14, 165, 233, 0.1), 0 0 1px rgba(14, 165, 233, 0.2)'
+                              : '0 4px 12px rgba(59, 130, 246, 0.08), 0 0 1px rgba(59, 130, 246, 0.15)'
                           }}
                         >
-                          {tech.icon}
+                          {IconComponent ? (
+                            <motion.div 
+                              className={`mb-3 flex items-center justify-center ${
+                                theme === 'dark' 
+                                  ? 'text-gray-300 group-hover:text-[#0ea5e9]'
+                                  : 'text-gray-700 group-hover:text-[#0ea5e9]'
+                              }`}
+                              whileHover={{ scale: 1.15 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              <IconComponent size={40} />
+                            </motion.div>
+                          ) : (
+                            <div className="mb-3 text-2xl">◯</div>
+                          )}
+                          <span className={`${
+                            theme === 'dark' 
+                              ? 'text-gray-300 group-hover:text-[#0ea5e9]'
+                              : 'text-gray-700 group-hover:text-[#0ea5e9]'
+                          } font-medium text-sm text-center transition-colors duration-200`}>
+                            {tech.name}
+                          </span>
                         </motion.div>
-                        <span className={`${
-                          theme === 'dark' 
-                            ? 'text-gray-300 group-hover:text-blue-300'
-                            : 'text-gray-700 group-hover:text-blue-700'
-                        } font-medium text-sm text-center`}>
-                          {tech.name}
-                        </span>
                       </motion.div>
-                    </motion.div>
-                  ))}
+                    );
+                  })}
                 </motion.div>
               </motion.div>
             ))}
