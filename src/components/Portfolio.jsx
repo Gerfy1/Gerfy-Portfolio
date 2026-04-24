@@ -75,7 +75,7 @@ const fadeInUp = {
 const techCategories = {
   languages: {
     title: "Linguagens",
-    icon: "💻",
+    icon: "",
     techs: [
       { name: "Java", icon: "java" },
       { name: "Kotlin", icon: "kotlin" },
