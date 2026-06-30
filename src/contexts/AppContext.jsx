@@ -11,8 +11,8 @@ export const useApp = () => {
 };
 
 export const AppProvider = ({ children }) => {
-  const [language, setLanguage] = useState('pt'); 
-  const [theme, setTheme] = useState('dark'); 
+  const [language, setLanguage] = useState('pt');
+  const [theme, setTheme] = useState('dark');
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'pt' ? 'en' : 'pt');
@@ -22,233 +22,264 @@ export const AppProvider = ({ children }) => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
-const translations = {
+  const translations = {
     pt: {
-        inicio: 'Início',
-        sobre: 'Sobre',
-        projetos: 'Projetos',
-        habilidades: 'Habilidades',
-        contato: 'Contate-me',
+      inicio: 'Início',
+      sobre: 'Sobre',
+      experiencia: 'Experiência',
+      projetos: 'Projetos',
+      habilidades: 'Habilidades',
+      contato: 'Contate-me',
 
-        welcome:
-            'Bem-vindo ao meu universo digital. Explore meus projetos e descubra como transformo ideias em soluções inovadoras.',
-        tagline: 'TRANSFORMANDO IDEIAS EM REALIDADE',
-        typedStrings: [
-            `Oi, eu sou o <span class="${
-                theme === 'dark' ? 'text-blue-300' : 'text-black-800'
-            } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Geraldo</span>`,
+      welcome:
+        'Bem-vindo ao meu universo digital. Explore meus projetos e descubra como transformo ideias em soluções inovadoras.',
+      tagline: 'TRANSFORMANDO IDEIAS EM REALIDADE',
+      typedStrings: [
+        `Oi, eu sou o <span class="${
+          theme === 'dark' ? 'text-blue-300' : 'text-black-800'
+        } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Geraldo</span>`,
+        `Sou <span class="${
+          theme === 'dark' ? 'text-blue-200' : 'text-black-800'
+        } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Software Developer</span>`,
+        `Transformo <span class="${
+          theme === 'dark' ? 'text-blue-200' : 'text-black-800'
+        } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">ideias em código</span>`,
+        `Apaixonado por <span class="${
+          theme === 'dark' ? 'text-blue-200' : 'text-black-800'
+        } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">tecnologia</span>`
+      ],
 
-            `Sou <span class="${
-                theme === 'dark' ? 'text-blue-200' : 'text-black-800'
-            } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">Software Developer</span>`,
+      aboutTitle: 'Sobre',
+      aboutTitleHighlight: 'mim',
+      aboutText1:
+        'Sou Software Developer formado em Análise e Desenvolvimento de Sistemas pela UNIESP, com atuação em backend, cloud e evolução de sistemas críticos. Atualmente trabalho na IntuitiveCare, desenvolvendo e migrando operações do ciclo de faturamento hospitalar em um domínio regulado, com foco em segurança, rastreabilidade e confiabilidade.',
+      aboutText2:
+        'Minha trajetória combina suporte técnico, infraestrutura Linux, automação e desenvolvimento full-stack, o que me dá uma visão prática de ponta a ponta: do problema operacional à solução em produção. Gosto de trabalhar com clareza de escopo, qualidade incremental, testes e colaboração próxima com Produto para entregar software confiável, sustentável e alinhado ao negócio.',
+      aboutImageAlt: 'Geraldo - Desenvolvedor de Software',
+      traits: [
+        'Inovação',
+        'Criatividade',
+        'Dedicação',
+        'Aprendizado Rápido',
+        'Resolução de Problemas',
+        'Trabalho em Equipe',
+        'Proatividade'
+      ],
 
-            `Transformo <span class="${
-                theme === 'dark' ? 'text-blue-200' : 'text-black-800'
-            } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">ideias em códigos</span>`,
-
-            `Apaixonado por <span class="${
-                theme === 'dark' ? 'text-blue-200' : 'text-black-800'
-            } font-bold" style="font-family: 'Roboto', sans-serif; font-weight: 700;">tecnologia</span> <span class="text-yellow-400">💻</span>`
+      experienceTitle: 'Experiência',
+      experienceTitleHighlight: 'profissional',
+      experience: {
+        role: 'Software Developer',
+        company: 'IntuitiveCare',
+        period: 'Maio/2026 - Atual',
+        description:
+          'Atuo no desenvolvimento e migração de operações backend do ciclo de faturamento hospitalar (RCM) na plataforma de Workflows, em um domínio sensível com dados de saúde, LGPD e padrão TISS. Trabalho em alinhamento direto com Produto para modernizar fluxos legados com segurança, previsibilidade e paridade comportamental.',
+        bullets: [
+          'Modernização de rotas legadas em Chalice para arquitetura serverless orientada a eventos com AWS Lambda, SQS e PostgreSQL.',
+          'Aplicação de Spec-Driven Development com especificação rigorosa, plano incremental e validação de escopo antes da codificação.',
+          'Prática de TDD/ATDD no ciclo RED-GREEN-REFACTOR para preservar comportamento legado e elevar a confiança das entregas.',
+          'Adoção de boas práticas de segurança e rastreabilidade com JSON Schema, SQL parametrizado, PRs vinculados ao JIRA e documentação arquitetural atualizada.'
         ],
+        chips: ['AWS Lambda', 'SQS', 'PostgreSQL', 'JSON Schema', 'TDD/ATDD', 'LGPD/TISS', 'JIRA']
+      },
 
-        aboutTitle: 'Sobre',
-        aboutTitleHighlight: 'mim',
-        aboutText1:
-            'Graduado em Análise e Desenvolvimento de Sistemas pela UNIESP, atuo como Engenheiro de Software Júnior com foco em criar soluções robustas e escaláveis. Sou um desenvolvedor Full Stack que vai além do código: tenho experiência prática com infraestrutura Linux, Docker e automação, garantindo que as aplicações em Java (Spring Boot), Angular e React funcionem com eficiência em produção.',
-        aboutText2:
-            'Durante meu estágio na MasterTechPB, conduzi projeto completo de reestruturação de infraestrutura de acesso remoto, desenvolvendo desde a infraestrutura virtualizada até dashboard de gerenciamento full-stack. Possuo base sólida em resolução de problemas, integração de sistemas e colaboração com equipes técnicas, aliando experiência prévia em suporte técnico a uma visão orientada a eficiência, estabilidade e melhoria contínua.',
-        aboutText2:
-            'Minha bagagem inclui passagens por grandes players como Globoplay e Mercado Livre, onde afiei minha capacidade analítica e de resolução de problemas em ambientes críticos. Hoje, combino essa visão orientada a estabilidade com minhas habilidades técnicas para entregar software de alta qualidade.',
-        aboutImageAlt: 'Geraldo - Desenvolvedor Full Stack',
-        traits: [
-            'Inovação',
-            'Criatividade',
-            'Dedicação',
-            'Aprendizado Rápido',
-            'Resolução de Problemas',
-            'Trabalho em Equipe',
-            'Proatividade'
-        ],
+      projectsTitle: 'Meus',
+      projectsTitleHighlight: 'Projetos',
+      projectStatus: {
+        completed: 'Concluído',
+        inDevelopment: 'Em desenvolvimento',
+        planning: 'Planejamento'
+      },
+      projectButtons: {
+        github: 'GitHub',
+        demo: 'Visualizar',
+        inDevelopment: 'Em desenvolvimento'
+      },
+      projects: {
+        forumhub: {
+          title: 'Forum HUB',
+          description:
+            'Forum Hub é um desafio proposto pela Alura na conclusão do programa Oracle ONE. O projeto consolida conhecimentos e replica a parte de back-end do fórum da Alura.'
+        },
+        medapi: {
+          title: 'MedAPI',
+          description:
+            'MedAPI é um projeto que demonstra a aplicação prática de tecnologias e boas práticas no desenvolvimento de APIs RESTful para aplicações corporativas.'
+        },
+        fipeapp: {
+          title: 'FipeAPP',
+          description:
+            'FipeAPP é uma aplicação Java que permite consultar preços médios de veículos com base na Tabela Fipe.'
+        },
+        jobsMemory: {
+          title: 'Jobs Memory',
+          description:
+            'Jobs Memory é uma aplicação completa para organizar e acompanhar candidaturas de emprego, com dashboard intuitivo e sistema de lembretes.'
+        },
+        rustdeskInfra: {
+          title: 'Infraestrutura de Acesso Remoto Corporativo',
+          description:
+            'Projeto completo de reestruturação da solução de acesso remoto na MasterTechPB. Migração para plataforma open source auto-hospedada (RustDesk) com infraestrutura virtualizada (Proxmox + Docker), customização de client corporativo com installer avançado em NSIS e desenvolvimento de dashboard de gerenciamento em Go e Vue.'
+        },
+        port: {
+          title: 'Portfólio Interativo',
+          description:
+            'Portfólio moderno e responsivo desenvolvido com React e Tailwind CSS, apresentando animações fluidas, alternância de temas e suporte multilíngue.'
+        }
+      },
 
-        projectsTitle: 'Meus',
-        projectsTitleHighlight: 'Projetos',
-        projectStatus: {
-            completed: 'Concluído',
-            inDevelopment: 'Em desenvolvimento',
-            planning: 'Planejamento'
-        },
-        projectButtons: {
-            github: 'GitHub',
-            demo: 'Visualizar',
-            inDevelopment: 'Em desenvolvimento'
-        },
-        projects: {
-            forumhub: {
-                title: 'Forum HUB',
-                description:
-                    'Fórum hub é um desafio proposto pela a alura na conclusão do programa Oracle ONE. O projeto é utilizado para consolidar conhecimento e replicar a parte de Back-End do forum Alura.'
-            },
-            medapi: {
-                title: 'MedAPI',
-                description:
-                    'MedAPI é um projeto que visa demonstrar a aplicação prática dessas tecnologias e práticas no contexto de desenvolvimento de APIs RESTful para aplicações corporativas.'
-            },
-            fipeapp: {
-                title: 'FipeAPP',
-                description:
-                    'FipeAPP é uma aplicação Java que permite aos usuários consultar preços médios de veículos com base na Tabela Fipe.'
-            },
-            jobsMemory: {
-                title: 'Jobs Memory',
-                description:
-                    'Jobs Memory é uma aplicação completa para organizar e acompanhar candidaturas de emprego, com dashboard intuitivo e sistema de lembretes.'
-            },
-            rustdeskInfra: {
-                title: 'Infraestrutura de Acesso Remoto Corporativo',
-                description:
-                    'Projeto completo de reestruturação da solução de acesso remoto na MasterTechPB. Migração para plataforma open source auto-hospedada (RustDesk) com infraestrutura virtualizada (Proxmox + Docker), customização de client corporativo com installer avançado em NSIS, e desenvolvimento de dashboard de gerenciamento em Go e Vue com gestão de dispositivos, auditoria de sessões, agendas organizacionais e base de conhecimento integrada.'
-            },
-            port: {
-                title: 'Portfólio Interativo',
-                description:
-                    'Portfólio moderno e responsivo desenvolvido com React e Tailwind CSS, apresentando animações fluidas, alternância de temas e suporte multilíngue. Demonstra minhas habilidades em desenvolvimento frontend com foco na experiência do usuário e design intuitivo.'
-            }
-        },
+      skillsTitle: 'Tecnologias',
+      skillsTitleHighlight: '& Habilidades',
+      techCategories: {
+        languages: 'Linguagens',
+        frameworks: 'Frameworks & Libraries',
+        databases: 'Banco de Dados & ORM',
+        cloud: 'Cloud & DevOps',
+        devops: 'Controle de Versão',
+        tools: 'Ferramentas de Desenvolvimento'
+      },
 
-        skillsTitle: 'Tecnologias',
-        skillsTitleHighlight: '& Habilidades',
-        techCategories: {
-            languages: 'Linguagens',
-            frameworks: 'Frameworks & Libraries',
-            databases: 'Banco de Dados & ORM',
-            cloud: 'Cloud & DevOps',
-            devops: 'Controle de Versão',
-            tools: 'Ferramentas de Desenvolvimento'
-        },
+      contactTitle: 'Vamos criar algo',
+      contactTitleHighlight: 'incrível',
+      contactTitleEnd: 'juntos?',
+      contactText:
+        'Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato e vamos conversar sobre como posso ajudar a transformar suas ideias em realidade.',
+      contactButtons: {
+        linkedin: 'LinkedIn',
+        github: 'GitHub'
+      },
 
-        contactTitle: 'Vamos criar algo',
-        contactTitleHighlight: 'incrível',
-        contactTitleEnd: 'juntos?',
-        contactText:
-            'Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato e vamos conversar sobre como posso ajudar a transformar suas ideias em realidade.',
-        contactButtons: {
-            linkedin: 'LinkedIn',
-            github: 'GitHub'
-        },
-
-        footer: 'Feito com muito cafézão ☕'
+      footer: 'Feito com muito café'
     },
     en: {
-        inicio: 'Home',
-        sobre: 'About',
-        projetos: 'Projects',
-        habilidades: 'Skills',
-        contato: 'Contact me',
+      inicio: 'Home',
+      sobre: 'About',
+      experiencia: 'Experience',
+      projetos: 'Projects',
+      habilidades: 'Skills',
+      contato: 'Contact me',
 
-        welcome:
-            'Welcome to my digital universe. Explore my projects and discover how I transform ideas into innovative solutions.',
-        tagline: 'SHAPING IDEAS INTO REALITY',
-        typedStrings: [
-            `Hi, I'm <span class="${
-                theme === 'dark' ? 'text-blue-200' : 'text-black-800'
-            } font-bold">Geraldo</span>`,
-            `I'm a <span class="${
-                theme === 'dark' ? 'text-blue-200' : 'text-black-800'
-            } font-bold">Software Developer</span>`,
-            `I transform <span class="${
-                theme === 'dark' ? 'text-blue-200' : 'text-black-800'
-            } font-bold">ideas into code</span>`,
-            `Passionate about <span class="${
-                theme === 'dark' ? 'text-blue-200' : 'text-black-800'
-            } font-bold">technology</span> <span class="text-yellow-400">💻</span>`
+      welcome:
+        'Welcome to my digital universe. Explore my projects and discover how I transform ideas into innovative solutions.',
+      tagline: 'SHAPING IDEAS INTO REALITY',
+      typedStrings: [
+        `Hi, I'm <span class="${
+          theme === 'dark' ? 'text-blue-200' : 'text-black-800'
+        } font-bold">Geraldo</span>`,
+        `I'm a <span class="${
+          theme === 'dark' ? 'text-blue-200' : 'text-black-800'
+        } font-bold">Software Developer</span>`,
+        `I transform <span class="${
+          theme === 'dark' ? 'text-blue-200' : 'text-black-800'
+        } font-bold">ideas into code</span>`,
+        `Passionate about <span class="${
+          theme === 'dark' ? 'text-blue-200' : 'text-black-800'
+        } font-bold">technology</span>`
+      ],
+
+      aboutTitle: 'About',
+      aboutTitleHighlight: 'me',
+      aboutText1:
+        'I am a Software Developer with a degree in Systems Analysis and Development from UNIESP, focused on backend engineering, cloud and the evolution of critical systems. I currently work at IntuitiveCare, developing and migrating hospital revenue cycle operations in a regulated domain, with a focus on security, traceability and reliability.',
+      aboutText2:
+        'My background combines technical support, Linux infrastructure, automation and full-stack development, giving me a practical end-to-end view: from operational problems to production-ready solutions. I value clear scope, incremental quality, testing and close collaboration with Product to deliver reliable, sustainable software aligned with business needs.',
+      aboutImageAlt: 'Geraldo - Software Developer',
+      traits: [
+        'Innovation',
+        'Creativity',
+        'Dedication',
+        'Fast Learning',
+        'Problem Solving',
+        'Teamwork',
+        'Proactivity'
+      ],
+
+      experienceTitle: 'Professional',
+      experienceTitleHighlight: 'experience',
+      experience: {
+        role: 'Software Developer',
+        company: 'IntuitiveCare',
+        period: 'May/2026 - Present',
+        description:
+          'I develop and migrate backend operations for the hospital revenue cycle management (RCM) domain on the Workflows platform, working with sensitive healthcare data, LGPD and TISS requirements. I collaborate closely with Product to modernize legacy flows with security, predictability and behavioral parity.',
+        bullets: [
+          'Modernization of legacy Chalice routes into an event-driven serverless architecture with AWS Lambda, SQS and PostgreSQL.',
+          'Application of Spec-Driven Development through rigorous specifications, incremental planning and scope validation before coding.',
+          'TDD/ATDD practice with the RED-GREEN-REFACTOR cycle to preserve legacy behavior and increase delivery confidence.',
+          'Security and traceability practices with JSON Schema, parameterized SQL, JIRA-linked PRs and updated architecture documentation.'
         ],
+        chips: ['AWS Lambda', 'SQS', 'PostgreSQL', 'JSON Schema', 'TDD/ATDD', 'LGPD/TISS', 'JIRA']
+      },
 
-        aboutTitle: 'About',
-        aboutTitleHighlight: 'me',
-        aboutText1:
-            'Software Engineer with a degree in Systems Analysis and Development from UNIESP and hands-on experience in backend development (Java, Spring Boot) and frontend (Angular and React). Worked in corporate environments with Linux infrastructure, Docker, automation, and self-hosted systems, participating in the implementation and evolution of production solutions.',
-        aboutText2:
-            'During my internship at MasterTechPB, I led a complete remote access infrastructure restructuring project, developing from virtualized infrastructure to full-stack management dashboard. I have a strong foundation in problem-solving, system integration, and collaboration with technical teams, combining previous technical support experience with a focus on efficiency, stability, and continuous improvement.',
-        aboutImageAlt: 'Geraldo - Full Stack Developer',
-        traits: [
-            'Innovation',
-            'Creativity',
-            'Dedication',
-            'Fast Learning',
-            'Problem Solving',
-            'Teamwork',
-            'Proactivity'
-        ],
+      projectsTitle: 'My',
+      projectsTitleHighlight: 'Projects',
+      projectStatus: {
+        completed: 'Completed',
+        inDevelopment: 'In Development',
+        planning: 'Planning'
+      },
+      projectButtons: {
+        github: 'GitHub',
+        demo: 'View Demo',
+        inDevelopment: 'In Development'
+      },
+      projects: {
+        forumhub: {
+          title: 'Forum HUB',
+          description:
+            'Forum Hub is a challenge proposed by Alura at the conclusion of the Oracle ONE program. The project consolidates knowledge and replicates part of the Alura Forum back-end.'
+        },
+        medapi: {
+          title: 'MedAPI',
+          description:
+            'MedAPI demonstrates the practical application of technologies and practices in the development of RESTful APIs for corporate applications.'
+        },
+        fipeapp: {
+          title: 'FipeAPP',
+          description:
+            'FipeAPP is a Java application that allows users to check average vehicle prices based on the Fipe Table.'
+        },
+        jobsMemory: {
+          title: 'Jobs Memory',
+          description:
+            'Jobs Memory is a comprehensive application for organizing and tracking job applications, with an intuitive dashboard and reminder system.'
+        },
+        rustdeskInfra: {
+          title: 'Corporate Remote Access Infrastructure',
+          description:
+            'Complete restructuring project of the remote access solution at MasterTechPB. Migration to a self-hosted open source platform (RustDesk) with virtualized infrastructure (Proxmox + Docker), corporate client customization with an advanced NSIS installer and management dashboard development in Go and Vue.'
+        },
+        port: {
+          title: 'Interactive Portfolio',
+          description:
+            'Modern and responsive portfolio built with React and Tailwind CSS, featuring smooth animations, theme switching and multilingual support.'
+        }
+      },
 
-        projectsTitle: 'My',
-        projectsTitleHighlight: 'Projects',
-        projectStatus: {
-            completed: 'Completed',
-            inDevelopment: 'In Development',
-            planning: 'Planning'
-        },
-        projectButtons: {
-            github: 'GitHub',
-            demo: 'View Demo',
-            inDevelopment: 'In Development'
-        },
-        projects: {
-            forumhub: {
-                title: 'Forum HUB',
-                description:
-                    'Hub Forum is a challenge proposed by Alura at the conclusion of the Oracle ONE program. The project is used to consolidate knowledge and replicate part of the Alura Forum Back-End.'
-            },
-            medapi: {
-                title: 'MedAPI',
-                description:
-                    'MedAPI is a project that aims to demonstrate the practical application of these technologies and practices in the context of developing RESTful APIs for corporate applications.'
-            },
-            fipeapp: {
-                title: 'FipeAPP',
-                description:
-                    'FipeAPP is a Java application that allows users to check average vehicle prices based on the Fipe Table.'
-            },
-            jobsMemory: {
-                title: 'Jobs Memory',
-                description:
-                    'Jobs Memory is a comprehensive application for organizing and tracking job applications, with an intuitive dashboard and reminder system.'
-            },
-            rustdeskInfra: {
-                title: 'Corporate Remote Access Infrastructure',
-                description:
-                    'Complete restructuring project of remote access solution at MasterTechPB. Migration to self-hosted open source platform (RustDesk) with virtualized infrastructure (Proxmox + Docker), corporate client customization with advanced NSIS installer, and management dashboard development in Go and Vue with device management, session auditing, organizational address books and integrated knowledge base.'
-            },
-            port: {
-                title: 'Interactive Portfolio',
-                description:
-                    'Modern and responsive portfolio built with React and Tailwind CSS, featuring smooth animations, theme switching and multilingual support. Showcases my frontend development skills with focus on user experience and intuitive design.'
-            }
-        },
+      skillsTitle: 'Technologies',
+      skillsTitleHighlight: '& Skills',
+      techCategories: {
+        languages: 'Languages',
+        frameworks: 'Frameworks & Libraries',
+        databases: 'Databases & ORM',
+        cloud: 'Cloud & DevOps',
+        devops: 'Version Control',
+        tools: 'Development Tools'
+      },
 
-        skillsTitle: 'Technologies',
-        skillsTitleHighlight: '& Skills',
-        techCategories: {
-            languages: 'Languages',
-            frameworks: 'Frameworks & Libraries',
-            databases: 'Databases & ORM',
-            cloud: 'Cloud & DevOps',
-            devops: 'Version Control',
-            tools: 'Development Tools'
-        },
+      contactTitle: "Let's create something",
+      contactTitleHighlight: 'amazing',
+      contactTitleEnd: 'together?',
+      contactText:
+        "I'm always open to new opportunities and interesting projects. Get in touch and let's talk about how I can help transform your ideas into reality.",
+      contactButtons: {
+        linkedin: 'LinkedIn',
+        github: 'GitHub'
+      },
 
-        contactTitle: "Let's create something",
-        contactTitleHighlight: 'amazing',
-        contactTitleEnd: 'together?',
-        contactText:
-            "I'm always open to new opportunities and interesting projects. Get in touch and let's talk about how I can help transform your ideas into reality.",
-        contactButtons: {
-            linkedin: 'LinkedIn',
-            github: 'GitHub'
-        },
-
-        footer: 'Made with lots and lots of coffee ☕'
+      footer: 'Made with lots and lots of coffee'
     }
-}
+  };
 
   const t = translations[language];
 
@@ -263,4 +294,4 @@ const translations = {
       {children}
     </AppContext.Provider>
   );
-};  
+};

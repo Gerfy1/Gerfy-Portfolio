@@ -20,7 +20,11 @@ import {
   FaGitlab,
   FaExternalLinkAlt,
   FaClock,
-  FaAmazon
+  FaAmazon,
+  FaBriefcase,
+  FaBuilding,
+  FaCalendarAlt,
+  FaCheckCircle
 } from 'react-icons/fa';
 import {
   SiTypescript,
@@ -201,6 +205,9 @@ export default function Portfolio() {
   const [isTyping, setIsTyping] = useState(false);
   const [typedCharacters, setTypedCharacters] = useState([]);
   const { language, theme, t } = useApp();
+  const experience = t.experience || {};
+  const experienceChips = Array.isArray(experience.chips) ? experience.chips : [];
+  const experienceBullets = Array.isArray(experience.bullets) ? experience.bullets : [];
 
   useEffect(() => {
     let typed = null;
@@ -641,6 +648,168 @@ export default function Portfolio() {
                 />
               </motion.div>
             </motion.div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      <section id="experience" className={`relative ${
+        theme === 'dark' ? 'bg-black text-blue-100' : 'bg-white text-gray-900'
+      } py-20 px-6`}>
+        <motion.div
+          className="max-w-6xl mx-auto relative z-10"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+            variants={fadeInUp}
+          >
+            {t.experienceTitle} <span className={`text-transparent bg-clip-text ${
+              theme === 'dark'
+                ? 'bg-gradient-to-r from-blue-400 to-gray-300'
+                : 'bg-gradient-to-r from-blue-900 to-gray-700'
+            }`}>{t.experienceTitleHighlight}</span>
+          </motion.h2>
+
+          <motion.div variants={fadeInUp}>
+            <Card className={`${
+              theme === 'dark'
+                ? 'bg-[#0D0D0D]/90 border-gray-700 hover:border-blue-500/50 hover:shadow-blue-500/10'
+                : 'bg-white border-gray-200 shadow-lg hover:border-blue-400/50 hover:shadow-blue-400/10'
+            } backdrop-blur-sm transition-all duration-300 overflow-hidden hover:shadow-2xl`}>
+              <motion.div
+                className="h-2 bg-gradient-to-r from-blue-700 via-blue-500 to-white"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                style={{
+                  filter: 'drop-shadow(0 0 4px rgba(30, 64, 175, 0.5))',
+                  transformOrigin: 'left'
+                }}
+              />
+
+              <CardContent className="p-6 md:p-8">
+                <div className="grid lg:grid-cols-[0.95fr_1.35fr] gap-8 lg:gap-10">
+                  <div className="space-y-6">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-5">
+                      <div className="relative w-28 h-28 sm:w-32 sm:h-32 shrink-0 mx-auto sm:mx-0">
+                        <div className={`absolute inset-0 rounded-2xl ${
+                          theme === 'dark'
+                            ? 'bg-gradient-to-br from-blue-500/40 via-gray-500/20 to-blue-900/40'
+                            : 'bg-gradient-to-br from-blue-200 via-gray-100 to-blue-500/30'
+                        } blur-md opacity-70`} />
+                        <div className={`relative w-full h-full rounded-2xl overflow-hidden border ${
+                          theme === 'dark'
+                            ? 'border-blue-700/40 bg-blue-950'
+                            : 'border-blue-200 bg-blue-50'
+                        } shadow-xl`}>
+                          <img
+                            src="/gerfy.png"
+                            alt={t.aboutImageAlt}
+                            className="w-full h-full object-cover object-[center_38%]"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className={`absolute -right-2 -bottom-2 w-10 h-10 rounded-xl flex items-center justify-center ${
+                          theme === 'dark'
+                            ? 'bg-blue-900 text-blue-100 border border-blue-700'
+                            : 'bg-blue-100 text-blue-800 border border-blue-200'
+                        } shadow-lg`}>
+                          <FaBriefcase size={18} />
+                        </div>
+                      </div>
+
+                      <div className="min-w-0 text-center sm:text-left">
+                        <h3 className={`text-2xl md:text-3xl font-bold ${
+                          theme === 'dark' ? 'text-blue-100' : 'text-gray-900'
+                        }`}>
+                          {experience.role}
+                        </h3>
+                        <div className={`mt-3 flex flex-col sm:flex-row sm:items-center gap-3 text-sm ${
+                          theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                        }`}>
+                          <span className="flex items-center gap-2">
+                            <FaBuilding size={14} />
+                            {experience.company}
+                          </span>
+                          <span className={`hidden sm:block ${
+                            theme === 'dark' ? 'text-gray-600' : 'text-gray-300'
+                          }`}>|</span>
+                          <span className="flex items-center gap-2">
+                            <FaCalendarAlt size={14} />
+                            {experience.period}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p className={`text-base md:text-lg leading-relaxed ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                    }`}>
+                      {experience.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {experienceChips.map((chip, index) => (
+                        <motion.span
+                          key={chip}
+                          className={`px-3 py-1.5 ${
+                            theme === 'dark'
+                              ? 'bg-blue-800/30 text-blue-200 border border-blue-600/30'
+                              : 'bg-blue-50 text-blue-700 border border-blue-200'
+                          } rounded-full text-xs font-medium`}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          whileHover={{
+                            scale: 1.05,
+                            boxShadow: '0 0 8px rgba(30, 64, 175, 0.4)'
+                          }}
+                          transition={{ delay: index * 0.06 }}
+                        >
+                          {chip}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    {experienceBullets.map((item, index) => (
+                      <motion.div
+                        key={`${language}-${item}`}
+                        className={`flex gap-4 p-4 rounded-lg border ${
+                          theme === 'dark'
+                            ? 'bg-blue-950/20 border-blue-900/40'
+                            : 'bg-gray-50 border-gray-200'
+                        }`}
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        whileHover={{
+                          y: -3,
+                          boxShadow: theme === 'dark'
+                            ? '0 10px 24px rgba(30, 64, 175, 0.12)'
+                            : '0 10px 24px rgba(30, 64, 175, 0.10)'
+                        }}
+                        transition={{ delay: index * 0.08, duration: 0.25 }}
+                      >
+                        <span className={`mt-1 shrink-0 ${
+                          theme === 'dark' ? 'text-blue-300' : 'text-blue-700'
+                        }`}>
+                          <FaCheckCircle size={16} />
+                        </span>
+                        <p className={`text-sm md:text-base leading-relaxed ${
+                          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                          {item}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </motion.div>
       </section>

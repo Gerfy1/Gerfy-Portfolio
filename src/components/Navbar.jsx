@@ -12,7 +12,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'about', 'projects', 'skills', 'contact'];
+      const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -42,6 +42,7 @@ export default function Navbar() {
   const navItems = [
     { id: 'home', label: t.inicio },
     { id: 'about', label: t.sobre },
+    { id: 'experience', label: t.experiencia },
     { id: 'projects', label: t.projetos },
     { id: 'skills', label: t.habilidades },
   ];
