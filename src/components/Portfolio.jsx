@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
 import { Card, CardContent } from "/@/components/ui/card";
-import { Button } from "/@/components/ui/button";
 import { motion } from "framer-motion";
-import Typed from "typed.js";
+import Projects from "./Projects";
+import HeroTitle from "./HeroTitle";
 import Navbar from "./Navbar";
 import SectionAwareJapaneseText from "./SectionAwareJapaneseText";
 import { useApp } from '/@/contexts/AppContext';
@@ -18,8 +17,6 @@ import {
   FaGit,
   FaGithub,
   FaGitlab,
-  FaExternalLinkAlt,
-  FaClock,
   FaAmazon,
   FaBriefcase,
   FaBuilding,
@@ -27,6 +24,7 @@ import {
   FaCheckCircle
 } from 'react-icons/fa';
 import {
+  SiNextdotjs,
   SiTypescript,
   SiJavascript,
   SiSpringboot,
@@ -43,8 +41,6 @@ import {
   SiInsomnia,
   SiTailwindcss,
   SiBootstrap,
-  SiNotion,
-  SiTrello,
 
   SiKotlin,
   SiGo
@@ -82,11 +78,11 @@ const techCategories = {
     title: "Linguagens",
     icon: "",
     techs: [
+      { name: "Python", icon: "python" },
       { name: "Java", icon: "java" },
       { name: "Kotlin", icon: "kotlin" },
       { name: "TypeScript", icon: "typescript" },
       { name: "JavaScript", icon: "javascript" },
-      { name: "Python", icon: "python" },
       { name: "PHP", icon: "php" },
       { name: "Go", icon: "go" }
     ]
@@ -98,6 +94,7 @@ const techCategories = {
       { name: "Spring", icon: "springboot" },
       { name: "Angular", icon: "angular" },
       { name: "React", icon: "react" },
+      { name: "Next.js", icon: "nextjs" },
       { name: "React Native", icon: "react" },
       { name: "Node.js", icon: "nodejs" },
       { name: "Tailwind CSS", icon: "tailwindcss" },
@@ -162,6 +159,7 @@ const iconMap = {
   springboot: SiSpringboot,
   angular: FaAngular,
   react: FaReact,
+  nextjs: SiNextdotjs,
   nodejs: FaNode,
   vuejs: FaVuejs,
   postgresql: SiPostgresql,
@@ -187,286 +185,56 @@ const iconMap = {
   nsis: null         // No icon available
 };
 
-// Create allTechs mapping
-const allTechs = Object.values(techCategories).reduce((acc, category) => {
-  category.techs.forEach(tech => {
-    acc[tech.name] = tech;
-  });
-  return acc;
-}, {});
-
 // Helper function to get icon component
 const getIconComponent = (iconKey) => {
   return iconMap[iconKey] || null;
 };
 
 export default function Portfolio() {
-  const [showTextParticles, setShowTextParticles] = useState(false);
-  const [isTyping, setIsTyping] = useState(false);
-  const [typedCharacters, setTypedCharacters] = useState([]);
-  const { language, theme, t } = useApp();
-  const experience = t.experience || {};
-  const experienceChips = Array.isArray(experience.chips) ? experience.chips : [];
-  const experienceBullets = Array.isArray(experience.bullets) ? experience.bullets : [];
-
-  useEffect(() => {
-    let typed = null;
-    typed = new Typed("#typed", {
-      strings: t.typedStrings,
-      typeSpeed: 60,
-      backSpeed: 40,
-      backDelay: 2000,
-      loop: true,
-      contentType: 'html',
-      onBegin: () => {
-        setIsTyping(true);
-        setShowTextParticles(true);
-      },
-      onComplete: () => {
-        setIsTyping(false);
-      },
-      onTypingPaused: () => {
-        setIsTyping(false);
-      },
-      onTypingResumed: () => {
-        setIsTyping(true);
-      }
-    });
-
-    const typedElement = document.querySelector('#typed');
-    if (typedElement) {
-      let lastLength = 0;
-      
-      const observer = new MutationObserver(() => {
-        const currentLength = typedElement.textContent.length;
-        
-        if (currentLength > lastLength) {
-          createCharacterParticle(currentLength);
-        }
-        
-        lastLength = currentLength;
-      });
-      
-
-
-      observer.observe(typedElement, {
-        childList: true,
-        subtree: true,
-        characterData: true
-      });
-
-
-    return () => {
-        typed.destroy();
-        observer.disconnect();
-      };
-    }
-
-    return () => typed.destroy();
-  }, [language, theme]);
-
-  const createCharacterParticle = (position) => {
-    const typedElement = document.querySelector('#typed');
-    if (!typedElement) return;
-
-    const rect = typedElement.getBoundingClientRect();
-    const containerRect = typedElement.parentElement.getBoundingClientRect();
-    
-    const relativeX = rect.right - containerRect.left;
-    const relativeY = rect.top - containerRect.top + rect.height / 2;
-    
-    const particles = [];
-    
-    for (let i = 0; i < 3; i++) {
-      const particle = {
-        id: `${position}-${i}-${Date.now()}-${Math.random()}`,
-        x: relativeX + (Math.random() - 0.5) * 20,
-        y: relativeY + (Math.random() - 0.5) * 20,
-        vx: (Math.random() - 0.5) * 4,
-        vy: -Math.random() * 3 - 1,
-        size: 1 + Math.random() * 2
-      };
-      particles.push(particle);
-    }
-    
-    setTypedCharacters(prev => [...prev, ...particles]);
-    
-    setTimeout(() => {
-      setTypedCharacters(prev => 
-        prev.filter(p => !particles.some(newP => newP.id === p.id))
-      );
-    }, 2000);
-  };
+  const { theme, t } = useApp();
+  const experience = t.experience;
+  const experienceChips = experience.chips;
+  const experienceBullets = experience.bullets;
 
   return (
-    <main className={`min-h-screen font-sans overflow-x-hidden ${
+    <main className={`portfolio-page min-h-screen font-sans overflow-x-hidden ${
       theme === 'dark' ? 'bg-black text-white' : 'bg-white text-gray-900'
-    }`}>      <Navbar />
+    }`}>
+      <a href="#home" className="skip-link">{t.skipLink}</a>
+      <Navbar />
       
       <SectionAwareJapaneseText side="left" />
       <SectionAwareJapaneseText side="right" />
       
-        <section id="home" className={`relative ${
-        theme === 'dark' ? 'bg-black text-blue-100' : 'bg-white text-gray-900'
-      } min-h-screen flex flex-col items-center justify-center text-center px-4`}>
-        
-        <div className={`absolute inset-0 pointer-events-none ${
-          theme === 'dark' ? 'opacity-20' : 'opacity-10'
-        }`} style={{
-          backgroundImage: theme === 'dark' ? `
-            radial-gradient(circle at 25% 25%, rgba(30, 64, 175, 0.1) 0%, transparent 70%),
-            radial-gradient(circle at 75% 75%, rgba(30, 58, 138, 0.08) 0%, transparent 70%)
-          ` : `
-            radial-gradient(circle at 25% 25%, rgba(30, 64, 175, 0.05) 0%, transparent 70%),
-            radial-gradient(circle at 75% 75%, rgba(30, 58, 138, 0.03) 0%, transparent 70%)
-          `,
-          backgroundSize: '400px 400px, 600px 600px'
-        }}></div>
-        
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
-          animate={{
-            background: theme === 'dark' ? [
-              "radial-gradient(circle at 30% 70%, rgba(30, 64, 175, 0.15) 0%, transparent 60%)",
-              "radial-gradient(circle at 70% 30%, rgba(30, 58, 138, 0.18) 0%, transparent 60%)",
-              "radial-gradient(circle at 50% 50%, rgba(23, 37, 84, 0.12) 0%, transparent 60%)"
-            ] : [
-              "radial-gradient(circle at 30% 70%, rgba(30, 64, 175, 0.08) 0%, transparent 60%)",
-              "radial-gradient(circle at 70% 30%, rgba(30, 58, 138, 0.10) 0%, transparent 60%)",
-              "radial-gradient(circle at 50% 50%, rgba(23, 37, 84, 0.06) 0%, transparent 60%)"
-            ]
-          }}
-          transition={{ duration: 15, repeat: Infinity }}
-        />
-
-        <motion.div 
-          className="z-10 relative"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
-          <div className="relative">
-             <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-6 min-h-[200px] flex items-center">
-              <span 
-                id="typed" 
-                className={`text-transparent bg-clip-text ${
-                  theme === 'dark' 
-                    ? 'bg-gradient-to-r from-blue-200 via-gray-200 to-blue-300'
-                    : 'bg-gradient-to-r from-blue-900 via-gray-800 to-black'
-                }`}
-                 style={{
-                   fontFamily: "'Roboto', sans-serif",
-                   fontWeight: 100,
-                   display: 'block',
-                   textAlign: 'center',
-                 }}
-              />
-            </h1>
-
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {isTyping && (
-              <motion.div
-                className="absolute inset-0 pointer-events-none"
-                initial={{ opacity: 0 }}
-                animate={{
-                  boxShadow: theme === 'dark' ? [
-                    '0 0 20px rgba(255, 255, 255, 0.1)',
-                    '0 0 40px rgba(255, 255, 255, 0.6)',
-                    '0 0 60px rgba(255, 255, 255, 0.8)',
-                    '0 0 40px rgba(255, 255, 255, 0.6)',
-                    '0 0 20px rgba(255, 255, 255, 0.1)'
-                  ] : [
-                    '0 0 20px rgba(30, 64, 175, 0.1)',
-                    '0 0 40px rgba(30, 64, 175, 0.6)',
-                    '0 0 60px rgba(30, 64, 175, 0.8)',
-                    '0 0 40px rgba(30, 64, 175, 0.6)',
-                    '0 0 20px rgba(30, 64, 175, 0.1)'
-                  ]
-                }}
-                transition={{
-                  duration: 1, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            )}
-            </div>
+      <section id="home" tabIndex={-1} className={`relative flex min-h-screen flex-col items-center justify-center px-6 pb-20 pt-32 text-center ${theme === 'dark' ? 'bg-black text-blue-100' : 'bg-white text-gray-900'}`}>
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ background: theme === 'dark' ? 'radial-gradient(ellipse at 50% 35%, #17255480, transparent 65%)' : 'radial-gradient(ellipse at 50% 35%, #dbeafe, transparent 65%)' }} />
+        <motion.div aria-hidden="true" className="pointer-events-none absolute inset-0"
+          animate={{ background: theme === 'dark' ? [
+            'radial-gradient(circle at 30% 70%, rgba(30,64,175,0.15), transparent 60%)',
+            'radial-gradient(circle at 70% 30%, rgba(30,58,138,0.18), transparent 60%)',
+            'radial-gradient(circle at 50% 50%, rgba(23,37,84,0.12), transparent 60%)'
+          ] : [
+            'radial-gradient(circle at 30% 70%, rgba(30,64,175,0.06), transparent 60%)',
+            'radial-gradient(circle at 70% 30%, rgba(30,58,138,0.08), transparent 60%)',
+            'radial-gradient(circle at 50% 50%, rgba(23,37,84,0.05), transparent 60%)'
+          ] }} transition={{ duration: 15, repeat: Infinity }} />
+        <motion.div className="relative z-10 mx-auto w-full max-w-4xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <p className={`mb-6 text-xs font-semibold tracking-[0.18em] ${theme === 'dark' ? 'text-blue-300' : 'text-blue-800'}`}>{t.heroEyebrow}</p>
+          <HeroTitle />
+          <p className={`mx-auto max-w-2xl text-lg leading-relaxed md:text-xl ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{t.welcome}</p>
+          <div className="mt-5 flex flex-wrap justify-center gap-4">
+            <a href="#projects" className="inline-flex min-h-[44px] items-center rounded-lg bg-blue-700 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-800">{t.viewProjects}</a>
+            <a href="#contact" className={`inline-flex min-h-[44px] items-center rounded-lg border px-6 py-3 font-semibold transition-colors ${theme === 'dark' ? 'border-gray-600 hover:bg-gray-900' : 'border-gray-300 hover:bg-gray-50'}`}>{t.contato}</a>
           </div>
-                
-            
-           <motion.p 
-            className={`${
-              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-            } text-lg md:text-xl max-w-2xl mx-auto leading-relaxed`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-          >
-            {t.welcome}
-          </motion.p>
-          
-          <motion.div
-            className="text-center mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 0.8 }}
-          >
-            <motion.h2 
-              className={`text-2xl md:text-3xl font-bold text-transparent bg-clip-text ${
-                theme === 'dark' 
-                  ? 'bg-gradient-to-r from-blue-400 via-blue-200 to-gray-300'
-                  : 'bg-gradient-to-r from-blue-900 via-blue-800 to-gray-700'
-              } tracking-wider`}
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              style={{
-                backgroundSize: '200% 200%',
-                textShadow: theme === 'dark' 
-                  ? '0 0 20px rgba(30, 64, 175, 0.3)'
-                  : '0 0 15px rgba(30, 64, 175, 0.4)'
-              }}
-            >
-              {t.tagline}
-            </motion.h2>
-          </motion.div>
-
-          <motion.div
-            className="mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.8, duration: 0.6 }}
-          >
-            <div className={`w-6 h-10 border-2 ${
-              theme === 'dark' ? 'border-blue-800' : 'border-blue-900'
-            } rounded-full mx-auto flex justify-center`}>
-              <motion.div 
-                className={`w-1 h-3 ${
-                  theme === 'dark' ? 'bg-blue-400' : 'bg-blue-900'
-                } rounded-full mt-2`}
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                style={{
-                  boxShadow: theme === 'dark' 
-                    ? '0 0 8px rgba(30, 64, 175, 0.6), 0 0 16px rgba(30, 64, 175, 0.4)'
-                    : '0 0 8px rgba(30, 64, 175, 0.8), 0 0 16px rgba(30, 64, 175, 0.6)'
-                }}
-              />
-            </div>
-          </motion.div>
+          <p className={`mt-10 text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{t.tagline}</p>
         </motion.div>
       </section>
 
-      <section id="about" className={`relative ${
+      <section id="about" tabIndex={-1} className={`relative ${
         theme === 'dark' ? 'bg-blue-950 text-blue-100' : 'bg-gray-50 text-gray-900'
       } py-20 px-6`}>
         <motion.div 
-          className="max-w-4xl mx-auto relative z-10"
+          className="max-w-6xl mx-auto relative z-10"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, margin: "-100px" }}
@@ -484,7 +252,7 @@ export default function Portfolio() {
           </motion.h2>
           
           <motion.div 
-            className="grid md:grid-cols-2 gap-12 items-center"
+            className="grid gap-10 items-center md:grid-cols-[minmax(0,1fr)_256px]"
             variants={fadeInUp}
           >
            <div className="space-y-6">
@@ -590,7 +358,7 @@ export default function Portfolio() {
                       : 'bg-gradient-to-br from-gray-100 to-blue-100'
                   }`}>
                     <img 
-                      src="/110788311.jpeg" 
+                      src="/110788311.jpeg" width="256" height="256" loading="lazy"
                       alt={t.aboutImageAlt}
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -652,7 +420,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      <section id="experience" className={`relative ${
+      <section id="experience" tabIndex={-1} className={`relative ${
         theme === 'dark' ? 'bg-black text-blue-100' : 'bg-white text-gray-900'
       } py-20 px-6`}>
         <motion.div
@@ -778,7 +546,7 @@ export default function Portfolio() {
                   <div className="space-y-4">
                     {experienceBullets.map((item, index) => (
                       <motion.div
-                        key={`${language}-${item}`}
+                        key={item}
                         className={`flex gap-4 p-4 rounded-lg border ${
                           theme === 'dark'
                             ? 'bg-blue-950/20 border-blue-900/40'
@@ -799,7 +567,7 @@ export default function Portfolio() {
                         }`}>
                           <FaCheckCircle size={16} />
                         </span>
-                        <p className={`text-sm md:text-base leading-relaxed ${
+                        <p className={`text-base leading-relaxed ${
                           theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
                         }`}>
                           {item}
@@ -814,240 +582,9 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      <section id="projects" className={`relative ${
-        theme === 'dark' ? 'bg-[#0D0D0D] text-blue-100' : 'bg-white text-gray-900'
-      } py-20 px-6`}>        
-      <motion.div 
-          className="max-w-6xl mx-auto relative z-10"
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-            variants={fadeInUp}
-          >
-            {t.projectsTitle} <span className={`text-transparent bg-clip-text ${
-              theme === 'dark' 
-                ? 'bg-gradient-to-r from-blue-400 to-gray-300'
-                : 'bg-gradient-to-r from-blue-900 to-gray-700'
-            }`}>{t.projectsTitleHighlight}</span>
-          </motion.h2>
-          
-          <motion.div 
-            className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-            variants={staggerContainer}
-          >
-            {[
-              {
-                id: 1,
-                title: t.projects.rustdeskInfra.title,
-                description: t.projects.rustdeskInfra.description,
-                tech: ["Docker", "Git", "TypeScript", "Proxmox", "NSIS", "Go", "Vue"],
-                color: "from-blue-600 to-white",
-                status: "completed",
-                github: null,
-                demo: "https://www.linkedin.com/posts/geraldoaafilho_durante-minha-experi%C3%AAncia-como-estagi%C3%A1rio-activity-7413949555374940160-mtk_/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJrKPgBqqMpuQzIH0l3KIyXmu0FSeX4QCU"
-              },
-              {
-                id: 2,
-                title: t.projects.forumhub.title,
-                description: t.projects.forumhub.description,
-                tech: ["Java", "Spring", "PostgreSQL","Swagger UI", "Git"],
-                color: "from-blue-600 to-white",
-                status: "completed",
-                github: "https://github.com/Gerfy1/ForumHub",
-                demo: null
-              },
-              {
-                id: 3,
-                title: t.projects.medapi.title,
-                description: t.projects.medapi.description,
-                tech: ["Java", "Spring", "MySQL", "Swagger UI", "Git", "Trello", "Figma"],
-                color: "from-blue-600 to-white",
-                status: "completed",
-                github: "https://github.com/Gerfy1/MedAPI",
-                demo: null
-              },
-              {
-               id: 4,
-                title: t.projects.fipeapp.title,
-                description: t.projects.fipeapp.description,
-                tech: ["Java", "Insomnia", "Swagger UI", "Git", "Notion"],
-                color: "from-blue-700 to-white",
-                status: "completed",
-                github: "https://github.com/Gerfy1/FipeAPP",
-                demo: null
-              },
-              {
-                id: 5,
-                title: t.projects.jobsMemory.title,
-                description: t.projects.jobsMemory.description,
-                tech: ["Java","Spring","TypeScript", "Angular", "MySQL","Git", "Docker", "Figma", "Vercel", "Render"],
-                color: "from-blue-700 to-white",
-                status: "completed",
-                github: "https://github.com/geraldo/jobs-memory",
-                demo: "https://login-angular-memory.vercel.app/login"
-              },
-              {
-                id: 6,
-                title: t.projects.port.title,
-                description: t.projects.port.description,
-                tech: ["JavaScript", "React", "Tailwind", "Vercel", "Git", "Figma"],
-                color: "from-blue-600 to-white",
-                status: "completed",
-                github: "https://github.com/Gerfy1/Gerfy-Portfolio",
-                demo: "https://gerfy-portfolio.vercel.app"
-              }
-            ].map((project) => (
-              <motion.div
-                key={project.id}
-                className="group"
-                variants={fadeInUp}
-                whileHover={{ y: -10, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-              <Card className={`${
-                  theme === 'dark' 
-                    ? 'bg-black-800/80 border-gray-700 hover:border-blue-500/50 hover:shadow-blue-500/10'
-                    : 'bg-white border-gray-200 hover:border-blue-400/50 hover:shadow-blue-400/10 shadow-lg'
-                } backdrop-blur-sm transition-all duration-300 overflow-hidden hover:shadow-2xl h-full flex flex-col`}>
-                                    <motion.div 
-                    className={`h-2 bg-gradient-to-r ${project.color}`}
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    style={{
-                      filter: 'drop-shadow(0 0 4px rgba(30, 64, 175, 0.5))'
-                    }}
-                  />
-                    <CardContent className="p-6 flex-1 flex flex-col">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className={`text-xl font-semibold ${
-                        theme === 'dark' 
-                          ? 'text-blue-100 group-hover:text-blue-200'
-                          : 'text-gray-900 group-hover:text-blue-700'
-                      } transition-colors`}>
-                        {project.title}
-                      </h3>
-                      <span className={`px-2 py-1 text-xs rounded-full ${
-                        project.status === 'completed' 
-                          ? (theme === 'dark' ? 'bg-green-500/20 text-green-300 border border-green-500/30' : 'bg-green-100 text-green-700 border border-green-300')
-                          : project.status === 'inDevelopment' 
-                          ? (theme === 'dark' ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30' : 'bg-yellow-100 text-yellow-700 border border-yellow-300')
-                          : (theme === 'dark' ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-blue-100 text-blue-700 border border-blue-300')
-                      }`}>
-                        {t.projectStatus[project.status]}
-                      </span>
-                    </div>
-                   <p className={`${
-                      theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                    } text-sm mb-4 leading-relaxed flex-1`}>                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((techName, index) => {
-                        const tech = allTechs[techName] || { name: techName, icon: null };
-                        const IconComponent = getIconComponent(tech.icon);
-                        return (
-                          <motion.span 
-                            key={techName} 
-                            className={`px-3 py-1 flex items-center gap-2 ${
-                              theme === 'dark' 
-                              ? 'bg-blue-800/30 text-blue-200 border border-blue-600/30'
-                              : 'bg-blue-50 text-blue-700 border border-blue-200'
-                          } rounded-full text-xs font-medium`}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            whileHover={{
-                              scale: 1.05,
-                              boxShadow: '0 0 8px rgba(30, 64, 175, 0.4)'
-                            }}
-                            transition={{ delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            title={techName}
-                          >
-                            {IconComponent ? (
-                              <IconComponent size={14} />
-                            ) : (
-                              <span className="text-xs">◯</span>
-                            )}
-                            {techName}
-                          </motion.span>
-                        );
-                      })}
-                    </div>
-                    <div className={`flex gap-3 ${!project.github && !project.demo ? 'justify-center' : ''}`}>
-                      {project.github && (
-                        <Button 
-                          variant="outline" 
-                          className={`${
-                            theme === 'dark' 
-                              ? 'border-gray-600 text-gray-300 hover:bg-black-700 hover:text-blue-200 hover:border-blue-500/50'
-                              : 'border-gray-300 text-gray-700 hover:bg-black-100 hover:text-blue-700 hover:border-blue-400/50'
-                            } flex-1 transition-all duration-300`}                          style={{
-                            transition: 'all 0.3s ease'
-                          }}
-                          onMouseEnter={(e) => {
-                            e.target.style.boxShadow = '0 0 15px rgba(30, 64, 175, 0.3), 0 4px 12px rgba(0,0,0,0.2)';
-                            e.target.style.borderColor = 'rgba(30, 64, 175, 0.5)';
-                          }}
-                          onMouseLeave={(e) => {
-                            e.target.style.boxShadow = '';
-                            e.target.style.borderColor = '';
-                          }}
-                          onClick={() => window.open(project.github, '_blank')}
-                        >
-                          <span className="flex items-center gap-2">
-                            <FaGithub size={16} /> {t.projectButtons.github}
-                          </span>
-                        </Button>
-                      )}
-                      {project.demo && (
-                        <Button 
-                          className={`${
-                            theme === 'dark' 
-                              ? 'bg-blue-600 hover:bg-blue-700 text-white hover:text-blue-100'
-                              : 'bg-blue-600 hover:bg-blue-700 text-white hover:text-blue-100'
-                          } flex-1 transition-all duration-300`}                          style={{
-                            boxShadow: '0 0 8px rgba(30, 64, 175, 0.3)',
-                            transition: 'all 0.3s ease'
-                          }}
-                          onMouseEnter={(e) => {
-                            e.target.style.boxShadow = '0 0 20px rgba(30, 64, 175, 0.6), 0 0 30px rgba(30, 64, 175, 0.4), 0 4px 12px rgba(0,0,0,0.2)';
-                            e.target.style.filter = 'brightness(1.1)';
-                          }}
-                          onMouseLeave={(e) => {
-                            e.target.style.boxShadow = '0 0 8px rgba(30, 64, 175, 0.3)';
-                            e.target.style.filter = '';
-                          }}
-                          onClick={() => window.open(project.demo, '_blank')}
-                        >
-                          <span className="flex items-center gap-2">
-                            <FaExternalLinkAlt size={16} /> {t.projectButtons.demo}
-                          </span>
-                        </Button>
-                      )}
-                      {!project.github && !project.demo && (
-                        <div className="flex-1 flex items-center justify-center gap-2">
-                      <span className={`${
-                            theme === 'dark' ? 'text-gray-500' : 'text-gray-400'
-                          } text-sm italic flex items-center gap-2`}>
-                            <FaClock size={14} /> {t.projectButtons.inDevelopment}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </section>
+      <Projects />
 
-      <section id="skills" className={`relative ${
+      <section id="skills" tabIndex={-1} className={`relative ${
         theme === 'dark' ? 'bg-black text-blue-100' : 'bg-gray-50 text-gray-900'
       } py-20 px-6`}>
           <motion.div 
@@ -1067,6 +604,8 @@ export default function Portfolio() {
                 : 'bg-gradient-to-r from-blue-600 to-gray-700'
             }`}>{t.skillsTitle}</span> {t.skillsTitleHighlight}          </motion.h2>
           
+          <p className={`mx-auto mb-6 max-w-2xl text-center text-lg leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{t.skillsIntro}</p>
+          <div className="mb-12 flex flex-wrap justify-center gap-3">{["Python", "Java", "AWS", "PostgreSQL"].map(name => <span key={name} className={`rounded-full border px-5 py-2 font-semibold ${theme === 'dark' ? 'border-blue-700 bg-blue-950 text-blue-100' : 'border-blue-200 bg-blue-50 text-blue-900'}`}>{name}</span>)}</div>
           <div className="space-y-12">
             {Object.entries(techCategories).map(([categoryKey, category], categoryIndex) => (
               <motion.div
@@ -1095,7 +634,7 @@ export default function Portfolio() {
                     return (
                       <motion.div
                         key={tech.name}
-                        className="group cursor-pointer"
+                        className="group"
                         variants={fadeInUp}
                         whileHover={{ scale: 1.05, y: -4 }}
                         whileTap={{ scale: 0.95 }}
@@ -1120,21 +659,21 @@ export default function Portfolio() {
                             <motion.div 
                               className={`mb-3 flex items-center justify-center ${
                                 theme === 'dark' 
-                                  ? 'text-gray-300 group-hover:text-[#0ea5e9]'
-                                  : 'text-gray-700 group-hover:text-[#0ea5e9]'
+                                  ? 'text-gray-300 group-hover:text-blue-300'
+                                  : 'text-gray-700 group-hover:text-blue-700'
                               }`}
                               whileHover={{ scale: 1.15 }}
                               transition={{ duration: 0.2 }}
                             >
-                              <IconComponent size={40} />
+                              <IconComponent size={40} aria-hidden="true" />
                             </motion.div>
                           ) : (
-                            <div className="mb-3 text-2xl">◯</div>
+                            <div aria-hidden="true" className="mb-3 text-2xl">◯</div>
                           )}
                           <span className={`${
                             theme === 'dark' 
-                              ? 'text-gray-300 group-hover:text-[#0ea5e9]'
-                              : 'text-gray-700 group-hover:text-[#0ea5e9]'
+                              ? 'text-gray-300 group-hover:text-blue-300'
+                              : 'text-gray-700 group-hover:text-blue-700'
                           } font-medium text-sm text-center transition-colors duration-200`}>
                             {tech.name}
                           </span>
@@ -1149,7 +688,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      <section id="contact" className={`relative ${
+      <section id="contact" tabIndex={-1} className={`relative ${
         theme === 'dark' ? 'bg-black text-blue-100' : 'bg-white text-gray-900'
       } py-20 px-6`}>        <motion.div 
           className="max-w-3xl mx-auto text-center relative z-10"
@@ -1166,7 +705,7 @@ export default function Portfolio() {
               theme === 'dark' 
                 ? 'bg-gradient-to-r from-blue-400 to-blue-200'
                 : 'bg-gradient-to-r from-blue-600 to-blue-800'
-            }`}>{t.contactTitleHighlight}</span> {t.contactTitleEnd}
+            }`}>{t.contactTitleHighlight}</span>{t.contactTitleEnd}
           </motion.h2>
           
           <motion.p 
@@ -1183,15 +722,15 @@ export default function Portfolio() {
             variants={fadeInUp}
           >
             <motion.a 
-              href="mailto:geraldo.alves@gerfy.tech" 
+              href="mailto:gaalmeidafilho@gmail.com"
               className={`${
                 theme === 'dark' ? 'text-blue-300 hover:text-blue-200' : 'text-blue-600 hover:text-blue-700'
-              } transition-colors text-lg`}              whileHover={{ 
+              } inline-flex min-h-[44px] items-center transition-colors text-lg`}              whileHover={{
                 scale: 1.05,
                 textShadow: '0 0 8px rgba(168, 85, 247, 0.6)'
               }}
             >
-              geraldoalves@gerfy.tech
+              gaalmeidafilho@gmail.com
             </motion.a>
             <span className={`hidden sm:block ${
               theme === 'dark' ? 'text-gray-600' : 'text-gray-400'
@@ -1201,7 +740,7 @@ export default function Portfolio() {
                 rel="noopener noreferrer"              
                 className={`${
                 theme === 'dark' ? 'text-blue-300 hover:text-blue-200' : 'text-blue-600 hover:text-blue-700'
-              } transition-colors text-lg`}              whileHover={{ 
+              } inline-flex min-h-[44px] items-center transition-colors text-lg`}              whileHover={{
                 scale: 1.05,
                 textShadow: '0 0 8px rgba(168, 85, 247, 0.6)'
               }}
@@ -1210,63 +749,21 @@ export default function Portfolio() {
             </motion.a>
           </motion.div>
           
-          <motion.div 
-            className="flex gap-4 justify-center"
-            variants={fadeInUp}
-          >
-            <Button 
-              className={`${
-                theme === 'dark' 
-                  ? 'bg-gray-900 hover:bg-gray-700 text-blue-200'
-                  : 'bg-gray-100 hover:bg-gray-200 text-blue-700 border border-gray-300'
-              } px-8 py-3 transition-all duration-300`}              style={{
-                boxShadow: '0 0 8px rgba(30, 64, 175, 0.2)',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-              e.target.style.boxShadow =
-                '0 0 20px rgba(37, 99, 235, 0.4), 0 0 30px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(0,0,0,0.2)';
-              e.target.style.color = 'rgb(191, 219, 254)'; 
-            }}
-            
-            onMouseLeave={(e) => {
-              e.target.style.boxShadow = 'none';
-              e.target.style.color = ''; 
-            }}
-              onClick={() => window.open('https://www.linkedin.com/in/geraldoaafilho', '_blank')}
-            >
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a href="https://www.linkedin.com/in/geraldoaafilho" target="_blank" rel="noopener noreferrer"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-blue-700 px-8 py-3 font-semibold text-white transition-colors hover:bg-blue-800">
               {t.contactButtons.linkedin}
-            </Button>
-            <Button 
-              variant="outline" 
-            className={`${
-                theme === 'dark' 
-                  ? 'border-gray-600 text-gray-400 hover:bg-gray-800 hover:text-blue-200'
-                  : 'border-gray-300 text-gray-600 hover:bg-gray-100 hover:text-blue-700'
-              } px-8 py-3 transition-all duration-300`}
-                style={{
-                transition: 'all 0.3s ease'
-              }}
-             onMouseEnter={(e) => {
-              e.target.style.boxShadow =
-                '0 0 20px rgba(37, 99, 235, 0.4), 0 0 30px rgba(37, 99, 235, 0.2), 0 4px 12px rgba(0,0,0,0.2)';
-              e.target.style.color = 'rgb(191, 219, 254)';
-            }}
-            
-            onMouseLeave={(e) => {
-              e.target.style.boxShadow = 'none';
-              e.target.style.color = '';
-            }}
-            onClick={() => window.open('https://github.com/Gerfy1', '_blank')}
-            >
+            </a>
+            <a href="https://github.com/Gerfy1" target="_blank" rel="noopener noreferrer"
+              className={`inline-flex min-h-[44px] items-center justify-center rounded-lg border px-8 py-3 font-semibold transition-colors ${theme === 'dark' ? 'border-gray-600 text-gray-200 hover:bg-gray-800' : 'border-gray-300 text-gray-900 hover:bg-gray-100'}`}>
               {t.contactButtons.github}
-            </Button>
-          </motion.div>
+            </a>
+          </div>
         </motion.div>
       </section>
 
   <footer className={`relative ${
-        theme === 'dark' ? 'bg-black text-gray-600 border-gray-800' : 'bg-white text-gray-500 border-gray-200'
+        theme === 'dark' ? 'bg-black text-gray-400 border-gray-800' : 'bg-white text-gray-600 border-gray-200'
       } py-8 text-center border-t`}>        
       <p className="relative z-10">
           &copy; 2026 Geraldo. {t.footer}

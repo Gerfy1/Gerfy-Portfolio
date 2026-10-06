@@ -3,6 +3,74 @@
 @tailwind components;
 @tailwind utilities;
 
+html { scroll-behavior: smooth; }
+.portfolio-page > section { padding-inline: clamp(32px, 6vw, 112px); }
+.hero-typed-heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(2.25rem, 6.5vw, 6rem);
+  line-height: 1.15;
+  min-height: 3.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-typed-heading #typed, .hero-typed-heading .typed-cursor {
+  vertical-align: baseline !important;
+}
+@media (min-width: 768px) {
+  .hero-typed-heading { min-height: 2.4em; }
+}
+.japanese-background {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: none;
+  user-select: none;
+  font-family: 'Noto Sans JP', 'Yu Gothic', sans-serif;
+  font-size: clamp(22px, 4.4vw, 64px);
+  font-weight: 900;
+}
+.japanese-background--left { left: clamp(2px, 0.55vw, 12px); }
+.japanese-background--right { right: clamp(2px, 0.55vw, 12px); }
+.japanese-character {
+  position: relative;
+  width: 1em;
+  height: 1.2em;
+  line-height: 1.2;
+  text-align: center;
+}
+.japanese-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 45%, currentColor 50%, transparent 55%);
+}
+.japanese-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+section[id] { scroll-margin-top: 88px; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+:where(button, a, summary, [tabindex]):focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 4px;
+}
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: #1d4ed8;
+  color: white;
+}
+.skip-link:focus { transform: translateY(0); }
+
 html, body {
   overflow-x: clip !important;
 }
