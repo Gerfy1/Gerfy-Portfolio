@@ -106,10 +106,10 @@ export const translations = {
                 description:
                     'Projeto de API REST que aplica Java, Spring e persistência em MySQL, com documentação Swagger. Uma demonstração prática de desenvolvimento backend para aplicações corporativas.'
             },
-            fipeapp: {
-                title: 'FipeAPP',
+            telaAI: {
+                title: 'TelaAI',
                 description:
-                    'Aplicação Java para consultar preços médios de veículos pela Tabela Fipe, tornando os dados de referência acessíveis em um fluxo de consulta.'
+                    'Plataforma que desenvolvi para compartilhar telas e assistir a jogos com amigos pelo navegador. Utiliza WebRTC com conexões P2P entre o transmissor e cada espectador, sinalização via Node.js e Socket.IO e negociação de conectividade com ICE/STUN. O coturn fornece retransmissão TURN quando a conexão direta não é possível. A interface em React permite trocar a tela sem alterar o link e ajustar a qualidade por espectador.'
             },
             jobsMemory: {
                 title: 'Jobs Memory',
@@ -253,10 +253,10 @@ export const translations = {
                 description:
                     'A REST API project using Java, Spring and MySQL persistence, with Swagger documentation. A practical demonstration of backend development for business applications.'
             },
-            fipeapp: {
-                title: 'FipeAPP',
+            telaAI: {
+                title: 'TelaAI',
                 description:
-                    "A Java application for looking up average vehicle prices using Brazil's Fipe reference table, making market reference data easy to consult."
+                    'A platform I built for sharing screens and watching games with friends in the browser. Uses WebRTC with P2P connections between the broadcaster and each viewer, Node.js and Socket.IO for signaling, and ICE/STUN for connectivity negotiation. coturn provides TURN relay when a direct connection cannot be established. The React interface supports switching the shared screen without changing the room link and adjusting quality for each viewer.'
             },
             jobsMemory: {
                 title: 'Jobs Memory',

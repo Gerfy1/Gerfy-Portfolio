@@ -24,6 +24,15 @@ export const projects = [
         linkLabel: 'spigot'
     },
     {
+        id: 4,
+        key: 'telaAI',
+        tech: ['WebRTC', 'P2P', 'coturn', 'STUN/TURN', 'Socket.IO', 'Node.js', 'React', 'Vite', 'Docker'],
+        status: 'published',
+        github: null,
+        demo: 'https://telaai.pedidodivino.com/',
+        linkLabel: 'website'
+    },
+    {
         id: 2,
         key: 'forumhub',
         tech: ['Java', 'Spring', 'PostgreSQL', 'Swagger UI', 'Git'],
@@ -37,14 +46,6 @@ export const projects = [
         tech: ['Java', 'Spring', 'MySQL', 'Swagger UI', 'Git', 'Trello', 'Figma'],
         status: 'completed',
         github: 'https://github.com/Gerfy1/MedAPI',
-        demo: null
-    },
-    {
-        id: 4,
-        key: 'fipeapp',
-        tech: ['Java', 'Insomnia', 'Swagger UI', 'Git', 'Notion'],
-        status: 'completed',
-        github: 'https://github.com/Gerfy1/FipeAPP',
         demo: null
     },
     {
